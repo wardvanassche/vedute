@@ -1,0 +1,14 @@
+body {
+    background-color: #0C475B;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.navbar {
+    max-width: 75%;
+    margin: auto;
+}
