@@ -23,7 +23,7 @@ header h1 {
 
 .navbar a {
     padding-bottom: 3px;
-    border-bottom: 2px solid transparent;
+    border-bottom: 1px solid transparent;
 }
 
 .navbar a:hover {
@@ -34,7 +34,6 @@ header h1 {
 
 .border-bottom {
     border-width: 2px !important;
-
 }
 
 .nav-item {
