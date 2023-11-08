@@ -3,7 +3,7 @@ session_start();
 
 //I use this code to prevent deeplinks.
 if (!isset($_SESSION['loggedInUser'])) {
-    header("Location: index.php");
+    header("Location: login.php");
     exit;
 }
 
