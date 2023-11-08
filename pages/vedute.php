@@ -8,7 +8,7 @@
     <body>
         <?php
             // verbinding met database
-            require_once "../php/settings.php"; 
+            require_once "../php/database.php"; 
 
             // haalt alle gegevens uit de database
             $sql = "SELECT * FROM vedute";

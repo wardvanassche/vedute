@@ -1,12 +1,12 @@
 <?php
     //gegevens database
-    $servername = "localhost";
-    $username = "root";
+    $host = "localhost";
+    $database = "vedute";
+    $user = "root";
     $password = "";
-    $dbname = "vedute";
 
     //verbind de database
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    $conn = new mysqli($host, $user, $password, $database);
 
     //error melding als het niet werkt
     if ($conn->connect_error) {

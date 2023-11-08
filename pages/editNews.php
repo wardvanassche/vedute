@@ -1,5 +1,5 @@
 <?php 
-    include "../php/settings.php";
+    include "../php/database.php";
 
     if (isset($_POST['update'])) {
         $news_id = $_POST['id']; 
