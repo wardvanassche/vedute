@@ -1,7 +1,7 @@
 <?php
 require_once "../php/settings.php"; // database verbinding
 
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create']))  {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
     //error melding
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create']))  {
 } else {
     echo "Het formulier is niet correct verzonden.";
 }
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])){
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 
     if (!isset($_POST['id']) || $_POST['id'] === '') {
         header('Location: index.php');
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])){
     var_dump($id);
     $sql = "DELETE FROM vedute  WHERE id= $id";
 
-    $result = mysqli_query($conn, $sql) or die('Error: '.mysqli_error($conn). ' with query ' . $sql);
+    $result = mysqli_query($conn, $sql) or die('Error: ' . mysqli_error($conn) . ' with query ' . $sql);
 
 
     $conn->close();
@@ -41,13 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])){
     exit;
 }
 
-function createVedute($title, $date, $author, $description, $photo, $conn) {
+function createVedute($title, $date, $author, $description, $photo, $conn)
+{
 
     // voegt de informatie toe aan de database
     $sql = "INSERT INTO vedute (title, date, author, description, photo) VALUES ('$title', '$date', '$author', '$description', '$photo')";
 
     // Voer de query uit en controleert op fouten
-    $result = mysqli_query($conn, $sql) or die('error '. mysqli_error($conn). 'with query' . $sql);
+    $result = mysqli_query($conn, $sql) or die('error ' . mysqli_error($conn) . 'with query' . $sql);
 
     // als de query gelukt is stuurt hij je naar test.php waar alle vedutes getoond worden
     if ($result) {

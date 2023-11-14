@@ -6,7 +6,7 @@
         <title>Overzicht nieuws</title>
     </head>
     <body>
-        <a href="insertNews.php">Maak artikel aan</a>
+        <a href="insertnews.php">Maak artikel aan</a>
         <br>
         <br>
         <?php

@@ -1,9 +1,8 @@
-
 /* text info */
 
 @font-face {
     font-family: 'Avenir Next';
-@import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro'); /* File to be stored at your site */
+    @import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro'); /* File to be stored at your site */
 
 }
 
@@ -17,17 +16,16 @@ html {
 }
 
 
-
 /*Background (Index page)*/
 body {
-    background-color: #293341;
+    background-color:  #0C475B;
     font-size: 18px;
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     margin: 0;
     padding: 0;
 }
-/*Background (Index page) end*/
 
+/*Background (Index page) end*/
 
 
 /*BorderCalender*/
@@ -37,11 +35,11 @@ nav {
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     background-color: rgb(77, 166, 134);
     position: fixed;
-    width:100vw;
-    justify-content:space-between;
+    width: 100vw;
+    justify-content: space-between;
 }
-/*BorderCalender*/
 
+/*BorderCalender*/
 
 
 /*Border upper section (Indexpage)*/
@@ -49,8 +47,8 @@ nav div {
     padding: 22px;
     height: 100%;
 }
-/*Border upper section (Indexpage) end*/
 
+/*Border upper section (Indexpage) end*/
 
 
 /*Header (index page)*/
@@ -65,20 +63,22 @@ header {
     background-size: cover;
     background-position: center;
 }
+
 /*Header (index page) end*/
 
 
 tr {
-background-color: #4DA686
+    background-color: #4DA686;
 }
 
 tfoot td {
     text-align: center;
     font-weight: bold;
 }
+
 table {
     width: auto;
-    margin:200px;
+    margin: 200px;
     margin-top: 20px;
     padding: 91px;
     color: black;
@@ -90,13 +90,13 @@ h1 {
     margin-top: -80px;
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     font-weight: bold;
-    padding-top:10vh;
+    padding-top: 10vh;
     margin-left: 90px;
     line-height: 150%;
     font-size: 1.5em;
 }
-/*training list end*/
 
+/*training list end*/
 
 
 /*Header (Form page)*/
@@ -111,8 +111,8 @@ h2 {
     background-size: cover;
     background-position: center;
 }
-/*Header (Form page)*/
 
+/*Header (Form page)*/
 
 
 /*training titles*/
@@ -124,8 +124,8 @@ h3 {
     margin-left: 90px;
     font-size: 2em;
 }
-/*training titles end*/
 
+/*training titles end*/
 
 
 /*training list*/
@@ -133,32 +133,32 @@ h4 {
     margin-top: -80px;
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     font-weight: normal;
-    padding-top:10vh;
+    padding-top: 10vh;
     margin-left: 90px;
     line-height: 150%;
     font-size: 1.5em;
 }
+
 /*training list end*/
 
 
-
 /*Colums*/
-.left{
-    width:50%;
-    float:left;
-    background:white;
-    height:100%;
+.left {
+    width: 50%;
+    float: left;
+    background: white;
+    height: 100%;
 }
 
-.right{
-    width:50%;
-    float:right;
+.right {
+    width: 50%;
+    float: right;
     background: white;
-    height:100%;
+    height: 100%;
     margin: 0 1.5%;
 }
-/*Colums end*/
 
+/*Colums end*/
 
 
 /*link text (Index page)*/
@@ -166,8 +166,8 @@ a {
     color: white;
     text-decoration: none;
 }
-/*link text (Index page) end*/
 
+/*link text (Index page) end*/
 
 
 /*Hover text*/
@@ -175,17 +175,18 @@ a:hover {
     color: lightgreen;
     font-weight: bold;
 }
-/*Hover text end*/
 
+/*Hover text end*/
 
 
 /*Middle section background (index page)*/
 section {
-    background-color: #293341;
+    background-color:  #0C475B;
     margin: 20px auto;
     font-size: 1.1em;
     max-width: 800px;
 }
+
 /*Middle section background (index page) end*/
 
 
@@ -224,6 +225,7 @@ input[type=submit]:hover {
     background-color: #ffffff;
     color: #282828;
 }
+
 /*Form Design end*/
 
 
@@ -232,8 +234,7 @@ html {
 }
 
 
-
-.left-col, .right-col{
+.left-col, .right-col {
     background-color: #ffffff;
     width: 25%;
     float: left;
@@ -243,12 +244,13 @@ html {
     width: 50%;
     float: left;
 }
+
 /* Calender design end*/
 
 
 /* Footer*/
 .footer {
-    font-family:'Avenir Next LT Pro', sans-serif, Regular;
+    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     background-color: #4DA686;
     height: 30vh;
     display: flex;
@@ -258,8 +260,8 @@ html {
     color: #4DA686;
     justify-content: center;
 }
-/* Footer end*/
 
+/* Footer end*/
 
 
 /* login page*/
@@ -279,6 +281,7 @@ tfoot td {
 td {
     padding: 0 10px;
 }
+
 td.image img {
     width: 50px;
     height: 50px;

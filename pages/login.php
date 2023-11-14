@@ -5,7 +5,7 @@
 session_start();
 
 //I want to check if the user is logged in or not
-if(isset($_SESSION['loggedInUser'])) {
+if (isset($_SESSION['loggedInUser'])) {
     $login = true;
 } else {
     $login = false;
@@ -16,7 +16,7 @@ if(isset($_SESSION['loggedInUser'])) {
 if (isset($_POST['submit'])) {
 
     //I use require_once to only make connection with the database when I use the submit button.
-    require_once "php/database.php";
+    require_once "../php/database.php";
 
     //These are for the SQL Injections//
     $email = mysqli_escape_string($conn, $_POST['email']);
@@ -24,16 +24,15 @@ if (isset($_POST['submit'])) {
 
     //if you didn't fill in your email or password you'll see errors.
     $errors = [];
-    if($email == '') {
+    if ($email == '') {
         $errors['email'] = 'Fill in your email';
     }
-    if($password == '') {
+    if ($password == '') {
         $errors['password'] = 'Fill in your password';
     }
 
 
-    if(empty($errors))
-    {
+    if (empty($errors)) {
         //I want to get information based on the email
         $query = "SELECT * FROM users WHERE email='$email'";
         $result = mysqli_query($conn, $query);
@@ -80,21 +79,21 @@ if (isset($_POST['submit'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="Stylesheet/Stylesheet.css" />
+    <link rel="stylesheet" href="../css/Stylesheet.css"/>
 
     <title>Login</title>
 </head>
 <body>
 
-<h2>log in</h2>
+<h2>Log in</h2>
 
 <section>
 
-<?php if ($login) { ?>
-    <p>You are loggen in!</p>
-    <p><a href="logoutpage.php">Log out</a> / <a href="secure.php">To secure page</a></p>
+    <?php if ($login) { ?>
+        <p>You are logged in!</p>
+        <p><a href="logoutpage.php">Log out</a> / <a href="secure.php">To secure page</a></p>
 
-<?php } else { ?>
+    <?php } else { ?>
     <form action="" method="post">
         <div>
             <label for="email">Email</label>
@@ -104,7 +103,7 @@ if (isset($_POST['submit'])) {
         </div>
         <div>
             <label for="password">Wachtwoord</label>
-            <input id="password" type="password" name="password" />
+            <input id="password" type="password" name="password"/>
             <!-- If 'password' field is not filled in it will show error = 'password can't be empty' -->
             <span class="errors"><?= $errors['password'] ?? '' ?></span>
         </div>
@@ -124,8 +123,8 @@ if (isset($_POST['submit'])) {
     </ul>
 </section>
 <?php } ?>
-    Nieuws <a href="pages/news.php">Ga naar Nieuws</a>
-    <br>
-    Vedute <a href="pages/vedute.php">Ga naar Artikel</a>
+Nieuws <a href="news.php">Ga naar Nieuws</a>
+<br>
+Vedute <a href="vedute.php">Ga naar Artikel</a>
 </body>
 </html>

@@ -7,7 +7,6 @@ $password = "";
 $dbname = "vedute";
 
 
-
 //verbind de database
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,5 +14,3 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Verbindingsfout: " . $conn->connect_error);
 }
-
-

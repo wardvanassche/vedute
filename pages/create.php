@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<form action="crud.php" method="post">
+<form action="../php/crud.php" method="post">
     <label for="title">kunstwerk naam:</label>
     <input type="text" name="title" id="title" required><br><br>
 
@@ -24,7 +24,7 @@
     <label for="photo">photo:</label>
     <input type="text" name="photo" id="photo" required><br><br>
 
-    <input type="submit"  name="create" value="verzenden">
+    <input type="submit" name="create" value="verzenden">
 </form>
 </body>
 </html>

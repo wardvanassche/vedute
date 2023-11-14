@@ -8,39 +8,39 @@
     <title>Admin Delete</title>
 </head>
 <body>
-<form action='crud.php' method="post">
+<form action='../php/crud.php' method="post">
     <?php
-require_once "../php/settings.php"; // verbinding met database
+    require_once "../php/settings.php"; // verbinding met database
     if (!isset($_GET['id']) || $_GET['id'] === '') {
         header('Location: test.php');
         exit;
     }
     $id = $_GET['id'];
-// haalt alle gegevens uit de database
-$sql = "SELECT * FROM vedute WHERE id =" . $id;
+    // haalt alle gegevens uit de database
+    $sql = "SELECT * FROM vedute WHERE id =" . $id;
 
-$result = $conn->query($sql); // Uitvoeren van de query en de resultaten worden in $result opgeslagen
+    $result = $conn->query($sql); // Uitvoeren van de query en de resultaten worden in $result opgeslagen
 
     // Controleer of er gegevens zijn opgehaald
     if ($result->num_rows > 0) {
 
-    // Loop door de resultaten en haal elke rij op
-    while ($row = $result->fetch_assoc()) {
-        // Toon de opgehaalde gegevens van elke rij
-        echo $row["id"];
-        echo $row["title"];
-        echo $row["date"];
-        echo $row["author"];
-        echo $row["description"];
+        // Loop door de resultaten en haal elke rij op
+        while ($row = $result->fetch_assoc()) {
+            // Toon de opgehaalde gegevens van elke rij
+            echo $row["id"];
+            echo $row["title"];
+            echo $row["date"];
+            echo $row["author"];
+            echo $row["description"];
 
-        // Toont de afbeelding
-        echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
-        echo '<input type="hidden" name="id" value="' . htmlentities($row['id']) . '" alt="Afbeelding">';
-        echo '<button type="submit" name="delete">DELETE</button>';
-           }
+            // Toont de afbeelding
+            echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
+            echo '<input type="hidden" name="id" value="' . htmlentities($row['id']) . '" alt="Afbeelding">';
+            echo '<button type="submit" name="delete">DELETE</button>';
+        }
     } else {
         echo "Er zijn nog geen vedutes aangemaakt";
-    }?>
+    } ?>
 
 </form>
 

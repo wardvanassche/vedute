@@ -32,8 +32,9 @@ if ($result->num_rows > 0) {
         // Toont de afbeelding
         echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
         ?>
-        <td class='border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400'><a href='delete.php?id=<?= htmlentities($row["id"] )    ?>'>Delete</a></td>
-<?php
+        <td class='border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400'><a
+                    href='delete.php?id=<?= htmlentities($row["id"]) ?>'>Delete</a></td>
+        <?php
 
     }
 } else {
@@ -42,7 +43,6 @@ if ($result->num_rows > 0) {
 
 $conn->close(); // Sluit de databaseverbinding
 ?>
-
 
 
 </body>
