@@ -1,7 +1,7 @@
 <?php
 require_once "../php/settings.php"; // database verbinding
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create']))  {
     //error melding
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -19,7 +19,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 } else {
     echo "Het formulier is niet correct verzonden.";
 }
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])){
 
+    if (!isset($_POST['id']) || $_POST['id'] === '') {
+        header('Location: index.php');
+        exit;
+    }
+
+    $id = $_POST['id'];
+    var_dump($id);
+    $sql = "DELETE FROM vedute  WHERE id= $id";
+
+    $result = mysqli_query($conn, $sql) or die('Error: '.mysqli_error($conn). ' with query ' . $sql);
+
+
+    $conn->close();
+
+
+    // Redirect to index.php
+    header('Location: test.php');
+    exit;
+}
 
 function createVedute($title, $date, $author, $description, $photo, $conn) {
 
@@ -41,4 +61,4 @@ function createVedute($title, $date, $author, $description, $photo, $conn) {
     // Sluit de databaseverbinding
     $conn->close();
 }
-?>
+

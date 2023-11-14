@@ -5,20 +5,24 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Admin Delete</title>
 </head>
-<body>test of het werkt
-
-<?php
+<body>
+<form action='crud.php' method="post">
+    <?php
 require_once "../php/settings.php"; // verbinding met database
-
+    if (!isset($_GET['id']) || $_GET['id'] === '') {
+        header('Location: test.php');
+        exit;
+    }
+    $id = $_GET['id'];
 // haalt alle gegevens uit de database
-$sql = "SELECT * FROM vedute";
+$sql = "SELECT * FROM vedute WHERE id =" . $id;
 
 $result = $conn->query($sql); // Uitvoeren van de query en de resultaten worden in $result opgeslagen
 
-// Controleer of er gegevens zijn opgehaald
-if ($result->num_rows > 0) {
+    // Controleer of er gegevens zijn opgehaald
+    if ($result->num_rows > 0) {
 
     // Loop door de resultaten en haal elke rij op
     while ($row = $result->fetch_assoc()) {
@@ -31,18 +35,14 @@ if ($result->num_rows > 0) {
 
         // Toont de afbeelding
         echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
-        ?>
-        <td class='border-b border-slate-200 dark:border-slate-600 p-4 pr-8 text-slate-500 dark:text-slate-400'><a href='delete.php?id=<?= htmlentities($row["id"] )    ?>'>Delete</a></td>
-<?php
+        echo '<input type="hidden" name="id" value="' . htmlentities($row['id']) . '" alt="Afbeelding">';
+        echo '<button type="submit" name="delete">DELETE</button>';
+           }
+    } else {
+        echo "Er zijn nog geen vedutes aangemaakt";
+    }?>
 
-    }
-} else {
-    echo "Er zijn nog geen vedutes aangemaakt";
-}
-
-$conn->close(); // Sluit de databaseverbinding
-?>
-
+</form>
 
 
 </body>
