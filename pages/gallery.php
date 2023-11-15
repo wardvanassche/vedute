@@ -58,20 +58,142 @@
     <div class="container text-center">
         <div class="row align-items-center mt-5">
             <div class="col bg-white m-3">
-                <img src="../img/0001-0.jpg" alt="DE WERELD" class="img-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                    <img src="../img/0001-0.jpg" alt="DE WERELD">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">DE WERELD</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/0001-0.jpg" alt="DE WERELD" class="mb-3">
+                                <img src="../img/0001-1.jpg" alt="DE WERELD" class="mb-3">
+                                <img src="../img/0001-2.jpg" alt="DE WERELD">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="col bg-white m-3">
-                <img src="../img/0002-0.jpg" alt="DE VOOR" class="img-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal2">
+                    <img src="../img/0002-0.jpg" alt="DE VOOR">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">DE VOOR</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/0002-0.jpg" alt="DE VOOR" class="mb-3">
+                                <img src="../img/0002-1.jpg" alt="DE VOOR" class="mb-3">
+                                <img src="../img/0002-2.jpg" alt="DE VOOR" class="mb-3">
+                                <img src="../img/0002-3.jpg" alt="DE VOOR">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="col bg-white m-3">
-                <img src="../img/0003-0.jpg" alt="DE STEEN" class="img-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal3">
+                    <img src="../img/0003-0.jpg" alt="">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">DE STEEN</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/0003-0.jpg" alt="DE STEEN" class="mb-3">
+                                <img src="../img/0003-1.jpg" alt="DE STEEN" class="mb-3">
+                                <img src="../img/0003-2.jpg" alt="DE STEEN">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="col bg-white m-3">
-                <img src="../img/0004-0.jpg" alt="DE OVERDRACHT" class="img-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal4">
+                    <img src="../img/0004-0.jpg" alt="">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">DE OVERDRACHT</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/0004-0.jpg" alt="DE OVERDRACHT" class="mb-3">
+                                <img src="../img/0004-1.jpg" alt="DE OVERDRACHT" class="mb-3">
+                                <img src="../img/0004-2.jpg" alt="DE OVERDRACHT" class="mb-3">
+                                <img src="../img/0004-3.jpg" alt="DE OVERDRACHT">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
             <div class="col bg-white m-3">
-                <img src="../img/0005-0.jpg" alt="YOU'RE RIGHT SO DIDDLEY!" class="img-fluid">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal5">
+                    <img src="../img/0005-0.jpg" alt="">
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">YOU'RE RIGHT SO DIDDLEY!</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="../img/0005-0.jpg" alt="YOU'RE RIGHT SO DIDDLEY!" class="mb-3">
+                                <img src="../img/0005-1.jpg" alt="YOU'RE RIGHT SO DIDDLEY!" class="mb-3">
+                                <img src="../img/0005-2.jpg" alt="YOU'RE RIGHT SO DIDDLEY!">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
     </div>
 </main>

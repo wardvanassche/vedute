@@ -68,7 +68,17 @@ header a {
     padding-right: 15px;
 }
 
-.col {
-    padding: 0;
-    border: 5px solid white;
+.btn img {
+    height: 100%;
+    width: 100%;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-footer .btn {
+    background-color: #0C475B;
+    color: white;
 }
