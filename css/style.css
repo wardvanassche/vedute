@@ -1,5 +1,5 @@
 body {
-    background-color: #0C475B;
+   background-image: linear-gradient(to right, lightblue, #0C475B);
 }
 
 header {
@@ -66,4 +66,9 @@ header a {
 .nav-item {
     padding-left: 15px;
     padding-right: 15px;
+}
+
+.col {
+    padding: 0;
+    border: 5px solid white;
 }

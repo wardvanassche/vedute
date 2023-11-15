@@ -55,9 +55,25 @@
     </div>
 </nav>
 <main>
-    <p>
-        <h1>Test</h1>
-    </p>
+    <div class="container text-center">
+        <div class="row align-items-center mt-5">
+            <div class="col bg-white m-3">
+                <img src="../img/0001-0.jpg" alt="DE WERELD" class="img-fluid">
+            </div>
+            <div class="col bg-white m-3">
+                <img src="../img/0002-0.jpg" alt="DE VOOR" class="img-fluid">
+            </div>
+            <div class="col bg-white m-3">
+                <img src="../img/0003-0.jpg" alt="DE STEEN" class="img-fluid">
+            </div>
+            <div class="col bg-white m-3">
+                <img src="../img/0004-0.jpg" alt="DE OVERDRACHT" class="img-fluid">
+            </div>
+            <div class="col bg-white m-3">
+                <img src="../img/0005-0.jpg" alt="YOU'RE RIGHT SO DIDDLEY!" class="img-fluid">
+            </div>
+        </div>
+    </div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
