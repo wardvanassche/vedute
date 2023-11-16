@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
 
 
     // Redirect to index.php
-    header('Location: test.php');
+    header('Location: ../pages/vedute.php');
     exit;
 }
 
@@ -52,7 +52,7 @@ function createVedute($title, $date, $author, $description, $photo, $conn)
 
     // als de query gelukt is stuurt hij je naar test.php waar alle vedutes getoond worden
     if ($result) {
-        header("location: test.php");
+        header("location: ../pages/vedute.php");
         echo "vedute gemaakt";
     } else {
         // Als er een fout optreedt, toon een foutbericht
