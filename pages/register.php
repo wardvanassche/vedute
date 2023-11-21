@@ -29,7 +29,7 @@ if (isset($_POST['submit'])) {
         $password = password_hash($password, PASSWORD_DEFAULT);
 
         //When the email and password are filled in these fill be added to the database
-        $query = "INSERT INTO users (email, password) VALUES ('$email', '$password')";
+        $query = "INSERT INTO users (email, password, role) VALUES ('$email', '$password','user')";
 
         $result = mysqli_query($conn, $query)
         or die('Db Error: ' . mysqli_error($conn) . ' with query: ' . $query);

@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Avenir Next';
+    @import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro'); /* File to be stored at your site */
+
+}
+
 body {
     background-color: #0C475B;
 }
@@ -13,6 +19,12 @@ header h1 {
     font-size: 80px;
     text-shadow: 1px 1px 9px black;
     -webkit-text-stroke: 2px black;
+}
+
+/*Header (Form page)*/
+h2 {
+    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
+    font-size: 3em;
 }
 
 header a {
@@ -50,6 +62,7 @@ header a {
 
 .navbar a {
     padding-bottom: 1px;
+    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     border-bottom: 1px solid transparent;
 }
 

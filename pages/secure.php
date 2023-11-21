@@ -30,27 +30,15 @@ $email = $_SESSION['loggedInUser']['email'];
 
 <ul>
     <h1>
-        <li><p>You are logged in! Welcome, <?= $email ?></p></li>
+        <p>You are logged in! Welcome, <?= $email ?></p>
 
-        <h1>
+        <button> <a href="logoutpage.php">logout</a></button>
+
+        <br>
+        <button><a href="index.php">Homepage</a></button>
+
+        </h1>
 </ul>
-</p>
 
-<ul>
-    <h1>
-        <li><a href="logoutpage.php">logout</a></li>
-
-        <h1>
-</ul>
-</p>
-
-<p>
-<ul>
-    <h1>
-        <li><a href="index.php">Homepage</a></li>
-
-        <h1>
-</ul>
-</p>
 </body>
 </html>
