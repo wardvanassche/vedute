@@ -5,27 +5,34 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+
+
     <title>Document</title>
 </head>
 <body>
-<form action="../php/crud.php" method="post">
-    <label for="title">kunstwerk naam:</label>
-    <input type="text" name="title" id="title" required><br><br>
 
-    <label for="date">date:</label>
-    <input type="date" name="date" id="date" required><br><br>
+<button class="download_button" id="downloadButton">Download e-book</button>
 
-    <label for="author">author:</label>
-    <input type="text" name="author" id="author" required><br><br>
+<script>
+    document.getElementById('downloadButton').addEventListener('click', function() {
+        // Hier plaats je de logica om het PDF-bestand te downloaden
+        downloadPDF();
+    });
 
-    <label for="description">description:</label>
-    <input type="text" name="description" id="description" required><br><br>
+    function downloadPDF() {
+        // Plaats hier de code om het PDF-bestand te downloaden
+        // Bijvoorbeeld, als de PDF een directe link heeft:
+        var pdfUrl = 'e-book/test.pdf';
 
-    <label for="photo">photo:</label>
-    <input type="text" name="photo" id="photo" required><br><br>
+        // Maak een onzichtbare link aan en simuleer een klik om het bestand te downloaden
+        var link = document.createElement('a');
+        link.href = pdfUrl;
+        link.download = 'test.pdf';
+        link.click();
+    }
+</script>
 
-    <input type="submit" name="create" value="verzenden">
-</form>
 </body>
 </html>
 

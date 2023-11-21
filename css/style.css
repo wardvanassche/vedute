@@ -67,3 +67,8 @@ header a {
     padding-left: 15px;
     padding-right: 15px;
 }
+.download_button button{
+    padding: 2em;
+    background-color: black;
+
+}
