@@ -50,7 +50,7 @@ if (isset($_POST['submit'])) {
                 $_SESSION['loggedInUser'] = [
                     'email' => $user['email'],
                     'id' => $user['id'],
-                    'role' => $user['role']  // Include the role in the session data
+                    'admin' => $user['admin']  // Include the role in the session data
 
                 ];
 
