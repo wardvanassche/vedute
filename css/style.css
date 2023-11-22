@@ -1,5 +1,6 @@
 body {
-   background-image: linear-gradient(to right, lightblue, #0C475B);
+    background: rgb(32,85,103);
+    background: linear-gradient(90deg, rgba(32,85,103,1) 0%, rgba(12,71,91,1) 50%, rgba(12,71,91,1) 100%);
 }
 
 header {
@@ -68,17 +69,14 @@ header a {
     padding-right: 15px;
 }
 
-.btn img {
-    height: 100%;
+.fit-image {
     width: 100%;
+    object-fit: cover;
+    height: 300px;
 }
 
-.modal-body {
-    display: flex;
-    flex-direction: column;
-}
-
-.modal-footer .btn {
+.btn-secondary {
     background-color: #0C475B;
-    color: white;
 }
+
+
