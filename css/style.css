@@ -1,6 +1,6 @@
 body {
-    background: rgb(32,85,103);
-    background: linear-gradient(90deg, rgba(32,85,103,1) 0%, rgba(12,71,91,1) 50%, rgba(12,71,91,1) 100%);
+    background: rgb(32, 85, 103);
+    background: linear-gradient(90deg, rgba(32, 85, 103, 1) 0%, rgba(12, 71, 91, 1) 50%, rgba(12, 71, 91, 1) 100%);
 }
 
 header {
@@ -73,10 +73,26 @@ header a {
     width: 100%;
     object-fit: cover;
     height: 300px;
+    border: 1px solid black;
+}
+
+.fit-image:hover {
+    transform: scale(1.01);
 }
 
 .btn-secondary {
     background-color: #0C475B;
 }
 
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    height: 75px;
+    width: 75px;
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%, 100%;
+    border-radius: 50%;
+}
 
+.col-sm {
+    border: 3px black;
+}
