@@ -35,6 +35,7 @@ $admin = $_SESSION['loggedInUser']['admin'];
         <p>
             <?php if ($admin == true) { ?>
                 Hello
+                <a href="/adminOverview.php">admin overzicht</a>
             <?php }else{ ?>
             doei
             <?php } ?>
