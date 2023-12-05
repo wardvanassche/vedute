@@ -67,3 +67,8 @@ header a {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.fit-image {
+    width: 100%;
+    object-fit: cover;
+    height: 300px;
