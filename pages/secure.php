@@ -10,6 +10,7 @@ if (!isset($_SESSION['loggedInUser'])) {
 
 //Get email from session
 $email = $_SESSION['loggedInUser']['email'];
+$admin = $_SESSION['loggedInUser']['admin'];
 ?>
 
 <!doctype html>
@@ -31,6 +32,15 @@ $email = $_SESSION['loggedInUser']['email'];
 <ul>
     <h1>
         <p>You are logged in! Welcome, <?= $email ?></p>
+        <p>
+            <?php if ($admin == true) { ?>
+                Hello
+                <a href="adminOverview.php">admin overzicht</a>
+            <?php }else{ ?>
+            doei
+            <?php } ?>
+        </p>
+<!--        --><?php //var_dump($_SESSION['loggedInUser']); ?>
 
         <button> <a href="logoutpage.php">logout</a></button>
 

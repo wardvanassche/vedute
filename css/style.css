@@ -22,22 +22,15 @@ header h1 {
 }
 
 /*Header (Form page)*/
-h4 {
+h2 {
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
     font-size: 3em;
-    color: white;
 }
 
 header a {
     text-decoration: none;
     color: white;
 }
-
-/* Add this to your existing CSS */
-p{
-    color:white;
-}
-
 
 .login {
     display: flex;
