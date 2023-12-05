@@ -28,29 +28,6 @@ body {
 /*Background (Index page) end*/
 
 
-/*BorderCalender*/
-nav {
-    display: flex;
-    font-size: 18px;
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
-    background-color: rgb(77, 166, 134);
-    position: fixed;
-    width: 100vw;
-    justify-content: space-between;
-}
-
-/*BorderCalender*/
-
-
-/*Border upper section (Indexpage)*/
-nav div {
-    padding: 22px;
-    height: 100%;
-}
-
-/*Border upper section (Indexpage) end*/
-
-
 /*Header (index page)*/
 header {
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;
@@ -114,58 +91,18 @@ h2 {
 
 /*Header (Form page)*/
 
+p{
+    color: #ffffff;
 
-/*training titles*/
-h3 {
-    margin-top: 60px;
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
-    font-weight: bolder;
-    padding-top: 05vh;
-    margin-left: 90px;
-    font-size: 2em;
 }
-
-/*training titles end*/
-
-
-/*training list*/
-h4 {
-    margin-top: -80px;
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
-    font-weight: normal;
-    padding-top: 10vh;
-    margin-left: 90px;
-    line-height: 150%;
-    font-size: 1.5em;
-}
-
-/*training list end*/
-
-
-/*Colums*/
-.left {
-    width: 50%;
-    float: left;
-    background: white;
-    height: 100%;
-}
-
-.right {
-    width: 50%;
-    float: right;
-    background: white;
-    height: 100%;
-    margin: 0 1.5%;
-}
-
-/*Colums end*/
-
 
 /*link text (Index page)*/
+
 a {
-    color: white;
+    color: #0e0000;
     text-decoration: none;
 }
+
 
 /*link text (Index page) end*/
 
@@ -189,6 +126,14 @@ section {
 
 /*Middle section background (index page) end*/
 
+
+button{
+    background-color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 /*Form Design */
 input[type=text], input[type=password], select, textarea {
@@ -227,41 +172,6 @@ input[type=submit]:hover {
 }
 
 /*Form Design end*/
-
-
-html {
-    font-size: 62.5%;
-}
-
-
-.left-col, .right-col {
-    background-color: #ffffff;
-    width: 25%;
-    float: left;
-}
-
-.center-col {
-    width: 50%;
-    float: left;
-}
-
-/* Calender design end*/
-
-
-/* Footer*/
-.footer {
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
-    background-color: #4DA686;
-    height: 30vh;
-    display: flex;
-    margin: auto;
-    flex-direction: column;
-    text-align: center;
-    color: #4DA686;
-    justify-content: center;
-}
-
-/* Footer end*/
 
 
 /* login page*/

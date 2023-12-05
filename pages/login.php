@@ -49,7 +49,9 @@ if (isset($_POST['submit'])) {
 
                 $_SESSION['loggedInUser'] = [
                     'email' => $user['email'],
-                    'id' => $user['id']
+                    'id' => $user['id'],
+                    'admin' => $user['admin']  // Include the role in the session data
+
                 ];
 
 
@@ -91,7 +93,8 @@ if (isset($_POST['submit'])) {
 
     <?php if ($login) { ?>
         <p>You are logged in!</p>
-        <p><a href="logoutpage.php">Log out</a> / <a href="secure.php">To secure page</a></p>
+        <p>        <button> <a href="logoutpage.php">logout</a></button> / <button> <a href="secure.php">To secure page</a></button>
+        </p>
 
     <?php } else { ?>
     <form action="" method="post">
@@ -117,14 +120,16 @@ if (isset($_POST['submit'])) {
 
     <ul>
         <h1>
-            <li><a href="register.php">Don't have an account yet?</a></li>
-
+            <a href="register.php">Don't have an account yet?</a>
             <h1>
+                <br>
+                <button> <a href="news.php">Ga naar Nieuws</a></button>
+                <br>
+                <button> <a href="vedute.php">Ga naar Artikel </a></button>
+
     </ul>
 </section>
 <?php } ?>
-Nieuws <a href="news.php">Ga naar Nieuws</a>
-<br>
-Vedute <a href="vedute.php">Ga naar Artikel</a>
+
 </body>
 </html>
