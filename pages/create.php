@@ -21,8 +21,17 @@
     <label for="description">description:</label>
     <input type="text" name="description" id="description" required><br><br>
 
-    <label for="photo">photo:</label>
-    <input type="text" name="photo" id="photo" required><br><br>
+    <label for="photo1">photo 1:</label>
+    <input type="text" name="photo1" id="photo1" required><br><br>
+
+    <label for="photo2">photo 2:</label>
+    <input type="text" name="photo2" id="photo2" required><br><br>
+
+    <label for="photo3">photo 3:</label>
+    <input type="text" name="photo3" id="photo3" required><br><br>
+
+    <label for="photo3">photo 4:</label>
+    <input type="text" name="photo4" id="photo4"><br><br>
 
     <input type="submit" name="create" value="verzenden">
 </form>

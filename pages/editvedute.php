@@ -5,9 +5,12 @@ if (isset($_POST['update'])) {
     $vedute_id = $_POST['id'];
     $title = $_POST["title"];
     $description = $_POST['description'];
-    $photo = $_POST['photo'];
+    $photo1 = $_POST['photo1'];
+    $photo2 = $_POST['photo2'];
+    $photo3 = $_POST['photo3'];
+    $photo4 = $_POST['photo4'];
 
-    $sql = "UPDATE `vedute` SET `title`='$title',`description`='$description',`photo`='$photo' WHERE `id`='$vedute_id'";
+    $sql = "UPDATE `vedute` SET `title`='$title',`description`='$description',`photo1`='$photo1',`photo2`='$photo2',`photo3`='$photo3',`photo4`='$photo4' WHERE `id`='$vedute_id'";
     $result = $conn->query($sql);
 
     if ($result == TRUE) {
@@ -27,7 +30,10 @@ if (isset($_GET['id'])) {
         while ($row = $result->fetch_assoc()) {
             $title = $row["title"];
             $description = $row['description'];
-            $photo = $row['photo'];
+            $photo1 = $row['photo1'];
+            $photo2 = $row['photo2'];
+            $photo3 = $row['photo3'];
+            $photo4 = $row['photo4'];
         }
     }
 }
@@ -53,7 +59,10 @@ if (isset($_GET['id'])) {
     <br>
     Foto:
     <br>
-    <input type="text" name="photo" value="<?php echo $photo; ?>">
+    <input type="text" name="photo" value="<?php echo $photo1; ?>">
+    <input type="text" name="photo" value="<?php echo $photo2; ?>">
+    <input type="text" name="photo" value="<?php echo $photo3; ?>">
+    <input type="text" name="photo" value="<?php echo $photo4; ?>">
     <br>
     <input type="hidden" name="id" value="<?php echo $vedute_id; ?>">
     <br>

@@ -76,7 +76,7 @@
                         // Toon de opgehaalde gegevens van elke rij
                         echo '<!-- Button trigger modal -->
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1' . $row['id'] . '">
-                    <img src="' . $row["photo"] . '" alt="' . $row["title"] . '" class="img-responsive fit-image rounded">
+                    <img src="' . $row["photo1"] . '" alt="' . $row["title"] . '" class="img-responsive fit-image rounded">
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal1' . $row['id'] . '" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -97,8 +97,17 @@
                                     </div>
                                 <div class="carousel-inner">
                                     <div class="carousel-item active">
-                                        <img src="' . $row["photo"] . '" class="d-block w-100" alt="' . $row["title"] . '">
-                                    </div>                                                 
+                                        <img src="' . $row["photo1"] . '" class="d-block w-100" alt="' . $row["title"] . '">
+                                    </div>   
+                                    <div class="carousel-item">
+                                        <img src="' . $row["photo2"] . '" class="d-block w-100" alt="' . $row["title"] . '">
+                                    </div> 
+                                    <div class="carousel-item">
+                                        <img src="' . $row["photo3"] . '" class="d-block w-100" alt="' . $row["title"] . '">
+                                    </div> 
+                                    <div class="carousel-item">
+                                        <img src="' . $row["photo4"] . '" class="d-block w-100" alt="' . $row["title"] . '">
+                                    </div>                                         
                                 </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
