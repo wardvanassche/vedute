@@ -76,7 +76,7 @@
                         // Toon de opgehaalde gegevens van elke rij
                         echo '<!-- Button trigger modal -->
                 <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1' . $row['id'] . '">
-                    <img src="'. $row["photo"] .'" alt="'. $row["title"] .'" class="img-responsive fit-image rounded">
+                    <img src="' . $row["photo"] . '" alt="' . $row["title"] . '" class="img-responsive fit-image rounded">
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal1' . $row['id'] . '" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -84,43 +84,31 @@
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel"> '. $row["title"] .' </h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"> ' . $row["title"] . ' </h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div id="carouselExampleIndicators" class="carousel slide">
+                                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="0" class="active" aria-current="true"
-                                                aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#carouselExampleIndicators"
-                                                data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                     </div>
-                                    <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                            data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="' . $row["photo"] . '" class="d-block w-100" alt="' . $row["title"] . '">
+                                    </div>                                                 
                                 </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                            </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
