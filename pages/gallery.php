@@ -74,17 +74,17 @@
                     // Loop door de resultaten en haal elke rij op
                     while ($row = $result->fetch_assoc()) {
                         // Toon de opgehaalde gegevens van elke rij
-                        echo "<!-- Button trigger modal -->
-                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                    <img src="../img/0001-0.jpg" alt="DE WERELD" class="img-responsive fit-image rounded">
+                        echo '<!-- Button trigger modal -->
+                <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal1' . $row['id'] . '">
+                    <img src="'. $row["photo"] .'" alt="'. $row["title"] .'" class="img-responsive fit-image rounded">
                 </button>
                 <!-- Modal -->
-                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
+                <div class="modal fade" id="exampleModal1' . $row['id'] . '" tabindex="-1" aria-labelledby="exampleModalLabel"
                      aria-hidden="true">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">DE WERELD</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel"> '. $row["title"] .' </h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                         aria-label="Close"></button>
                             </div>
@@ -101,13 +101,13 @@
                                     </div>
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img src="../img/0001-0.jpg" class="d-block w-100" alt="DE WERELD">
+                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="../img/0001-1.jpg" class="d-block w-100" alt="DE WERELD">
+                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="../img/0001-2.jpg" class="d-block w-100" alt="DE WERELD">
+                                            <img src="'. $row["photo"] .'" class="d-block w-100" alt="'. $row["title"] .'">
                                         </div>
                                     </div>
                                     <button class="carousel-control-prev" type="button"
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                     </div>
-                </div>"
+                </div>';
 
                     }
                 } else {
