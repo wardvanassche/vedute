@@ -39,20 +39,40 @@ body {
 }
 
 
+
 main {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 20px auto;
     padding: 20px;
     line-height: 1.6;
+    text-align: center;
 }
 
 section {
-    margin-bottom: 40px;
     background-color: white;
     border-radius: 10px;
-    height: 200px;
-    width: 600px;
+    height: 300px;
+    width: 1000px;
+    margin: 0 auto 20px;
+    max-width: 100%;
 }
+
+.arrow {
+    box-sizing: border-box;
+    height: 5vw;
+    width: 5vw;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 1px 1px 0px;
+    transform: rotate(45deg);
+    transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+}
+
 
 p{
     font-family: 'Avenir Next LT Pro', sans-serif, Regular;

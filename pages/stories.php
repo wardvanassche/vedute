@@ -61,34 +61,42 @@
 
 <main>
     <section id="artist1">
-        <h2>Artist Name 1</h2>
+        <h2>DE WERELD</h2>
         <div class="artist-info">
             <img src="artist1.jpg" alt="Artist 1">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed ac lacus ut tellus dapibus
-                tristique. Integer ut nisi at sem imperdiet tristique.
+                ‘We bekijken de wereld, waarvan de plekken en de herinneringen nog onbepaald zijn.
+                Maar zodra wij onze eerste handelingen verrichten, zijn deze onverbrekelijk met een
+                plek verbonden.
             </p>
         </div>
+
     </section>
 
+    <div class="arrow" onclick="scrollToSection('artist2')"></div>
+
+
     <section id="artist2">
-        <h2>Artist Name 2</h2>
         <div class="artist-info">
             <img src="artist2.jpg" alt="Artist 2">
             <p>
-                Curabitur sit amet dapibus metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
-                posuere cubilia Curae; Nunc ut ex eu erat cursus aliquet. Phasellus auctor ultrices facilisis.
+                Zo hebben wij uiteindelijk allemaal onze eigen plek; de plek waar we
+                ooit begonnen, en de plek waar we ooit zullen eindigen.
             </p>
         </div>
     </section>
 
+    <div class="arrow" onclick="scrollToSection('artist3')"></div>
+
+
     <section id="artist3">
-        <h2>Artist Name 3</h2>
         <div class="artist-info">
             <img src="artist3.jpg" alt="Artist 3">
             <p>
-                Fusce auctor mauris vel ligula volutpat, id maximus elit tincidunt. Praesent non justo at nunc semper
-                fermentum ut vitae elit. Suspendisse potenti.
+                We hebben de plek van ons
+                alleen zijn en de plek van ons groot verlangen. Soms bereiken we die plek.
+                Het ideaal dat we onszelf ooit stelden.’
+                (Ynte Alkema naar Italo Calvino; 0001-0004)
             </p>
         </div>
     </section>
@@ -96,6 +104,13 @@
     <!-- Add more sections as needed -->
 
 </main>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
 
 <script>
     // Smooth scrolling effect
