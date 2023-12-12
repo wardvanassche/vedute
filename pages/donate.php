@@ -67,46 +67,94 @@ $id = $_SESSION['loggedInUser']['id'];
         </ul>
     </div>
 </nav>
+
+
 <div class="container mt-5">
     <h4>Bedrag om te doneren:</h4>
-    <form action="process_donation.php" method="post">
+    <form id="donationForm"  method="post">
+
         <label for="donationAmount" class="form-label"></label>
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
             <input type="number" id="donationAmount" name="donationAmount" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Doneren</button>
+        <input type="hidden" id="donationSubmitted" name="donationSubmitted" value="1">
+        <button type="submit" name="toggleButton" class="btn btn-primary">Doneren</button>
     </form>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('donationForm').addEventListener('submit', function () {
+            // Vul het onzichtbare veld in voordat het formulier wordt ingediend
+            document.getElementById('donationSubmitted').value = '1';
+            return true; // Zorg ervoor dat het formulier na het instellen van de waarde doorgaat met indienen
+        });
+    });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+<!---->
+<!--<script>-->
+<!--    document.addEventListener('DOMContentLoaded', function () {-->
+<!--        document.getElementById('donationForm').addEventListener('submit', function () {-->
+<!--            // Vul het onzichtbare veld in voordat het formulier wordt ingediend-->
+<!--            console.log('Submitting form with donationSubmitted = 1');-->
+<!--            document.getElementById('donationSubmitted').value = '1';-->
+<!--            return true; // Zorg ervoor dat het formulier na het instellen van de waarde doorgaat met indienen-->
+<!--        });-->
+<!--    });-->
+<!---->
+<!--</script>-->
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 <?php
-// Controleer of het formulier is verzonden
+
+// Start de sessie als deze nog niet actief is
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Controleer of de knop is ingedrukt
     if (isset($_POST['toggleButton'])) {
+        // Controleer of het onzichtbare veld is ingevuld door de JavaScript
+        if (isset($_POST['donationSubmitted']) && $_POST['donationSubmitted'] == '1') {
+            // Haal de waarde van donationAmount op
+            $donatieBedrag = $_POST['donationAmount'];
 
+            // Voer hier je PHP-code uit, gebruik $donatieBedrag waar nodig
             $nieuweStatus = true;
             $sqlUpdate = "UPDATE users SET doneer = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
+
             if ($conn->query($sqlUpdate)) {
                 $conn->commit();  // Bevestig de transactie
-                echo "Update succesvol uitgevoerd.";
+                echo "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
+
+                $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
+
+                // Voeg het donatiebedrag toe als een queryparameter aan de URL
+                header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
             } else {
                 echo "Fout bij de update: " . $conn->error;
             }
-        header('Location: download_e-book.php');
 
+        }
     }
+    // Sluit de databaseverbinding
+    $conn->close();
 }
-// Sluit de databaseverbinding
-$conn->close();
+
 ?>
 
-<form method="post">
-    <button type="submit" name="toggleButton">Toggle Doneer</button>
-</form>
+
+
 
 
 

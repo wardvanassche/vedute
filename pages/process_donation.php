@@ -1,24 +1,18 @@
 <?php
-// Controleer of het formulier is ingediend
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Controleer of het donatiebedrag is ingesteld
-    if (isset($_POST["donationAmount"])) {
-        // Sanitize en valideer het donatiebedrag
-        $donatieBedrag = filter_var($_POST["donationAmount"], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
+// Controleer of het bedrag in de queryparameters aanwezig is
+if (isset($_GET['amount'])) {
+    // Haal de waarde op en desinfecteer deze indien nodig
+    $donatieBedrag = filter_var($_GET['amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-        // Voer aanvullende validatie uit indien nodig
-
-        // Verwerk de donatie (in een real-world scenario zou je hier een betalingsgateway integreren)
-        // Voor nu laten we gewoon een bedankbericht zien
-    } else {
-        // Behandel het geval waarin donatieBedrag niet is ingesteld
-        echo "<div class='error-message'>Fout: Geen bedrag aangegeven.</div>";
-    }
+    // Gebruik $donatieBedrag zoals nodig in de rest van je code
+//    echo "Ontvangen donatiebedrag: €" . htmlspecialchars($donatieBedrag);
 } else {
-    // Behandel het geval waarin het formulier niet is ingediend
-    echo "<div class='error-message'>Fout: Uw donatie is niet verstuurd.</div>";
+    // Handel het geval af waarin het bedrag niet aanwezig is
+    echo "Fout: Geen donatiebedrag ontvangen.";
 }
-?>
+
+
+//?>
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -34,9 +28,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h1>
             <p>Dank voor uw donatie van € <?= $donatieBedrag ?></p>
             <br>
+            <p>download nu het e-book</p>
+
+            <button class="download_button" id="downloadButton">Download e-book</button>
+
+            <script>
+                document.getElementById('downloadButton').addEventListener('click', function() {
+                    // Hier plaats je de logica om het PDF-bestand te downloaden
+                    downloadPDF();
+                });
+
+                function downloadPDF() {
+                    // Plaats hier de code om het PDF-bestand te downloaden
+                    // Bijvoorbeeld, als de PDF een directe link heeft:
+                    var pdfUrl = 'e-book/test.pdf';
+
+                    // Maak een onzichtbare link aan en simuleer een klik om het bestand te downloaden
+                    var link = document.createElement('a');
+                    link.href = pdfUrl;
+                    link.download = 'test.pdf';
+                    link.click();
+                }
+            </script>
             <button><a href="index.php">Terug naar homepagina</a></button>
         </h1>
     </ul>
 </div>
+<?= exit;?>
 </body>
 </html>
