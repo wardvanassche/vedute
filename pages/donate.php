@@ -25,10 +25,7 @@ $id = $_SESSION['loggedInUser']['id'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
-</head>
+
 <body>
 <header>
     <div class="container">
@@ -70,6 +67,18 @@ $id = $_SESSION['loggedInUser']['id'];
         </ul>
     </div>
 </nav>
+<div class="container mt-5">
+    <h4>Bedrag om te doneren:</h4>
+    <form action="process_donation.php" method="post">
+        <label for="donationAmount" class="form-label"></label>
+        <div class="input-group mb-3">
+            <span class="input-group-text">€</span>
+            <input type="number" id="donationAmount" name="donationAmount" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Doneren</button>
+    </form>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
