@@ -6,11 +6,12 @@ if (!isset($_SESSION['loggedInUser'])) {
     header("Location: login.php");
     exit;
 }
+require_once "../php/settings.php"; // verbinding met database
 
 
 
 $admin = $_SESSION['loggedInUser']['admin'];
-$doneren = $_SESSION['loggedInUser']['doneer'];
+//$doneren = $_SESSION['loggedInUser']['doneer'];
 $id = $_SESSION['loggedInUser']['id'];
 ?>
 <!doctype html>
@@ -72,28 +73,13 @@ $id = $_SESSION['loggedInUser']['id'];
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-<p><?= $doneren, $admin, $id ?>h</p>
 <?php
-// Include het bestand met de databaseverbinding
-require_once "../php/settings.php"; // verbinding met database
 // Controleer of het formulier is verzonden
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Controleer of de knop is ingedrukt
     if (isset($_POST['toggleButton'])) {
-        // Haal de huidige waarde op
-        $sqlSelect = "SELECT doneer FROM users WHERE id = $id";
-        $result = $conn->query($sqlSelect);
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $huidigeStatus = $doneren;
-
-            // Wissel de boolean-waarde om
-            $nieuweStatus = !$huidigeStatus;
-
-            // Update de database met de nieuwe waarde (let op de enkele aanhalingstekens en update query)
-//            $sqlUpdate = "UPDATE users SET doneer = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
-//            $conn->query($sqlUpdate);
+            $nieuweStatus = true;
             $sqlUpdate = "UPDATE users SET doneer = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
             if ($conn->query($sqlUpdate)) {
                 $conn->commit();  // Bevestig de transactie
@@ -101,19 +87,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } else {
                 echo "Fout bij de update: " . $conn->error;
             }
+        header('Location: download_e-book.php');
 
-
-        }
     }
 }
-
 // Sluit de databaseverbinding
 $conn->close();
 ?>
 
-
-
-<!-- Het formulier met de knop -->
 <form method="post">
     <button type="submit" name="toggleButton">Toggle Doneer</button>
 </form>
