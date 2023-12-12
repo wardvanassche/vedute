@@ -57,5 +57,57 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+
+<main>
+    <section id="artist1">
+        <h2>Artist Name 1</h2>
+        <div class="artist-info">
+            <img src="artist1.jpg" alt="Artist 1">
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed ac lacus ut tellus dapibus
+                tristique. Integer ut nisi at sem imperdiet tristique.
+            </p>
+        </div>
+    </section>
+
+    <section id="artist2">
+        <h2>Artist Name 2</h2>
+        <div class="artist-info">
+            <img src="artist2.jpg" alt="Artist 2">
+            <p>
+                Curabitur sit amet dapibus metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
+                posuere cubilia Curae; Nunc ut ex eu erat cursus aliquet. Phasellus auctor ultrices facilisis.
+            </p>
+        </div>
+    </section>
+
+    <section id="artist3">
+        <h2>Artist Name 3</h2>
+        <div class="artist-info">
+            <img src="artist3.jpg" alt="Artist 3">
+            <p>
+                Fusce auctor mauris vel ligula volutpat, id maximus elit tincidunt. Praesent non justo at nunc semper
+                fermentum ut vitae elit. Suspendisse potenti.
+            </p>
+        </div>
+    </section>
+
+    <!-- Add more sections as needed -->
+
+</main>
+
+<script>
+    // Smooth scrolling effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </body>
 </html>
