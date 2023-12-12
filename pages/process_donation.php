@@ -20,7 +20,7 @@ if (isset($_GET['amount'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verwerking Donatie</title>
-    <link rel="stylesheet" href="../css/Stylesheet.css"/>
+    <link rel="stylesheet" href="../css/style-loginsysteem.css"/>
 </head>
 <body>
 <div class="container">
