@@ -93,10 +93,12 @@ while ($row = $result->fetch_assoc()) {
 // Toon de opgehaalde gegevens van elke rij
     $id = $row["id"];
     $email = $row["email"];
+    $doneer = $row["doneer"];
 
     // Toon de opgehaalde gegevens van elke rij in HTML
     echo "<p>ID: $id</p>";
     echo "<p>Email: $email</p>";
+    echo "<p>doneer: $doneer</p>";
         }
         } else {
             echo "Er zijn nog geen vedutes aangemaakt";
