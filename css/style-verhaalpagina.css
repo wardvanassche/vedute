@@ -17,10 +17,15 @@ header {
 
 
 h2 {
-    font-family: "Acme", sans-serif;
+    font-family: 'Oswald', sans-serif;
     font-size: 3em;
     padding-left: 40px;
 }
+
+p{
+    font-family: 'Afacad', sans-serif;
+}
+
 
 
 header h1 {
@@ -79,10 +84,6 @@ main {
     border-right-width: 4px;
 }
 
-
-p{
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
-}
 
 .artist-info {
     display: flex;
@@ -157,12 +158,13 @@ section {
 
 .navbar {
     max-width: 75%;
+    border-radius: 10px;
     margin: auto;
 }
 
 .navbar a {
     padding-bottom: 1px;
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
+    font-family: 'Oswald', sans-serif;
     border-bottom: 1px solid transparent;
 }
 

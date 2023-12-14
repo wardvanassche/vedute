@@ -32,7 +32,6 @@
         link.click();
     }
 </script>
-
 </body>
 </html>
 

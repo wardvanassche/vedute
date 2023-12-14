@@ -1,7 +1,6 @@
 /* text info */
 
 @font-face {
-    font-family: 'Avenir Next';
     @import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro'); /* File to be stored at your site */
 
 }
@@ -20,7 +19,7 @@ html {
 body {
     background-color:  #0C475B;
     font-size: 18px;
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
+    font-family: 'Oswald', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -48,10 +47,6 @@ tr {
     background-color: #4DA686;
 }
 
-tfoot td {
-    text-align: center;
-    font-weight: bold;
-}
 
 table {
     width: auto;
@@ -78,7 +73,7 @@ h1 {
 
 /*Header (Form page)*/
 h2 {
-    font-family: 'Avenir Next LT Pro', sans-serif, Regular;
+    font-family: 'Oswald', sans-serif;
     font-size: 3em;
     padding-top: 10vh;
     color: #ffffff;
@@ -93,13 +88,15 @@ h2 {
 
 p{
     color: #ffffff;
+    font-family: 'Oswald', sans-serif;
 
 }
 
 /*link text (Index page)*/
 
 a {
-    color: #0e0000;
+    color: white;
+    font-family: 'Oswald', sans-serif;
     text-decoration: none;
 }
 
@@ -126,12 +123,13 @@ section {
 
 /*Middle section background (index page) end*/
 
-
 button{
-    background-color: #ffffff;
+    background-color: #0d6efd;
     padding: 12px 20px;
+    font-family: 'Oswald', sans-serif;
     border: none;
-    border-radius: 4px;
+    color: white;
+    border-radius: 20px;
     cursor: pointer;
 }
 
@@ -159,6 +157,7 @@ input[id=info], select, textarea {
 
 input[type=submit] {
     background-color: #ffffff;
+    font-family: 'Oswald', sans-serif;
     color: #21252b;
     padding: 12px 20px;
     border: none;
