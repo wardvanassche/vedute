@@ -1,0 +1,99 @@
+@font-face {
+    @import url('http://fonts.cdnfonts.com/css/avenir-next-lt-pro'); /* File to be stored at your site */
+}
+
+body {
+    background-color: #0C475B;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+section {
+    background-color: white;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 200;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    width: 80%; /* Adjust the width as needed */
+    text-align: center; /* Center text within the section */
+}
+
+h1 {
+    font-size: 80px;
+    text-shadow: 1px 1px 9px black;
+    -webkit-text-stroke: 2px black;
+}
+
+h2{
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    font-family: 'Afacad', sans-serif;
+    margin-bottom: 8px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+
+button.submit-btn {
+    background-color: #58804d;
+    padding: 12px 20px;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+button.submit-btn:hover {
+    background-color: #45a049;
+}
+
+button.home-btn {
+    background-color: #0d6efd;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Oswald', sans-serif;
+    position: absolute;
+    top: 10px; /* Adjust the top distance from the top of the page */
+    left: 10px; /* Adjust the right distance from the right of the page */
+}
+
+
+button:hover {
+    background-color: #45a049;
+}
+
+.success-message-container{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: green;
+}

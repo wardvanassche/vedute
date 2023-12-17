@@ -8,10 +8,11 @@
     <title>Verhalen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-verhaalpagina.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header>
@@ -57,5 +58,81 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+
+
+<main>
+    <section id="artist1">
+        <div class="artist-info">
+            <div class="text">
+                <h2>DE WERELD</h2>
+                <p>
+                    ‘We bekijken de wereld, waarvan de plekken en de herinneringen nog onbepaald zijn.
+                    Maar zodra wij onze eerste handelingen verrichten, zijn deze onverbrekelijk met een
+                    plek verbonden.
+                </p>
+            </div>
+           <div class= "image-1">
+               <img src="https://media.discordapp.net/attachments/372804664053334016/1184116040720978033/0001_a.jpg?ex=658accff&is=657857ff&hm=be40dffda207acf689feddccb7678d5082351c51255e1500da4778818b40844b&=&format=webp&width=642&height=978">
+           </div>
+        </div>
+    </section>
+
+    <div class="arrowcontainer">
+        <div class="arrow down" onclick="scrollToSection('artist2')"></div>
+    </div>
+
+    <section id="artist2">
+        <div class="artist-info">
+            <p>
+                Zo hebben wij uiteindelijk allemaal onze eigen plek; de plek waar we
+                ooit begonnen, en de plek waar we ooit zullen eindigen.
+            </p>
+            <img src="https://media.discordapp.net/attachments/372804664053334016/1184116034127544350/0001_c.jpg?ex=658accfe&is=657857fe&hm=9d194093549bde15b7081de35c60ab9a5a0af3cd24c86f89e275156606b963e7&=&format=webp&width=1494&height=978">
+                </div>
+    </section>
+
+    <div class="arrowcontainer">
+        <div class="arrow down" onclick="scrollToSection('artist3')"></div>
+    </div>
+
+
+    <section id="artist3">
+        <div class="artist-info">
+            <p>
+                We hebben de plek van ons
+                alleen zijn en de plek van ons groot verlangen. Soms bereiken we die plek.
+                Het ideaal dat we onszelf ooit stelden.’
+                (Ynte Alkema naar Italo Calvino; 0001-0004)
+            </p>
+
+            <img src="https://media.discordapp.net/attachments/372804664053334016/1184116041522098328/0001_b.jpg?ex=658acd00&is=65785800&hm=f213e72d2993e5151dac8cb47df04a74477aadbbe9e69fa71101dfd0252b7e37&=&format=webp&width=1490&height=978">
+                </div>
+    </section>
+
+    <div class="arrowcontainer">
+        <div class="arrow up" onclick="scrollToSection('artist1')"></div>
+    </div>
+
+</main>
+
+<script>
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+<script>
+    // Smooth scrolling effect
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
 </body>
 </html>

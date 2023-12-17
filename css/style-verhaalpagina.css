@@ -1,0 +1,184 @@
+@font-face {
+    @import url("https://fonts.googleapis.com/css2?family=Acme&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap");
+}
+
+body {
+    background-color: #0C475B;
+}
+
+header {
+    text-align: center;
+    color: white;
+    padding: 30px;
+    display: flex;
+}
+
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3em;
+    padding-left: 40px;
+}
+
+p{
+    font-family: 'Afacad', sans-serif;
+}
+
+
+
+header h1 {
+    font-size: 80px;
+    text-shadow: 1px 1px 9px black;
+    -webkit-text-stroke: 2px black;
+}
+
+
+header a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.arrowcontainer {
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+}
+
+.arrow {
+    box-sizing: border-box;
+    height: 5vw;
+    width: 5vw;
+    border-style: solid;
+    border-color: white;
+    border-width: 0px 1px 1px 0px;
+    transition: border-width 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.arrow.down {
+    transform: rotate(45deg); /* Downward arrow */
+}
+
+.arrow.up {
+    transform: rotate(-135deg); /* Upward arrow */
+}
+
+.arrow:hover {
+    border-bottom-width: 4px;
+    border-right-width: 4px;
+}
+
+
+.artist-info {
+    display: flex;
+    align-items: center; /* Align items vertically in the center */
+    max-width: 100%; /* Set a maximum width for the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 20px; /* Add padding as needed */
+}
+
+section {
+    position: relative;
+    background-color: white;
+    border-radius: 10px;
+    margin: 0 auto 20px;
+    font-size: larger;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center;
+    max-width: 100%;
+}
+
+
+.artist-info {
+    display: flex;
+    flex-direction: row; /* Display children (p and img) side by side */
+    align-items: center;
+    justify-content: space-between; /* Add space between p and img */
+    width: 100%; /* Full width within the section */
+    box-sizing: border-box; /* Include padding and border in the width */
+}
+
+.artist-info img {
+    max-width: 50%; /* Adjust the width of the image */
+    margin-left: 20px; /* Add space between text and image */
+    order: 2; /* Set the order to 2 to move the img to the right */
+}
+
+.text {
+    max-width: 80%; /* Adjust the width of the text */
+    text-align: center; /* Align text in the center */
+}
+
+.image-1 {
+    max-width: 80%; /* Adjust the width of the image */
+    margin-left: 20px; /* Add space between text and image */
+    order: 2; /* Set the order to 2 to move the img to the right */
+}
+
+
+.login {
+    display: flex;
+    justify-content: right;
+    height: 10px;
+}
+
+.login a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+}
+
+.login a:hover {
+    opacity: 0.5;
+}
+
+.login i {
+    font-size: x-large;
+    margin-left: 6px;
+}
+
+.navbar {
+    max-width: 75%;
+    border-radius: 10px;
+    margin: auto;
+}
+
+.navbar a {
+    padding-bottom: 1px;
+    font-family: 'Oswald', sans-serif;
+    border-bottom: 1px solid transparent;
+}
+
+.navbar a:hover {
+    color: black;
+    border-bottom: 2px solid black;
+    transition-duration: 700ms;
+}
+
+.border-bottom {
+    border-width: 2px !important;
+}
+
+.nav-item {
+    padding-left: 15px;
+    padding-right: 15px;
+}

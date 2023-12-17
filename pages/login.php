@@ -50,7 +50,8 @@ if (isset($_POST['submit'])) {
                 $_SESSION['loggedInUser'] = [
                     'email' => $user['email'],
                     'id' => $user['id'],
-                    'admin' => $user['admin']  // Include the role in the session data
+                    'admin' => $user['admin'] , // Include the role in the session data
+                    'doneer' => $user['doneer'],  // Include the role in the session data
 
                 ];
 
@@ -81,7 +82,8 @@ if (isset($_POST['submit'])) {
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/Stylesheet.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style-loginsysteem.css"/>
 
     <title>Login</title>
 </head>
