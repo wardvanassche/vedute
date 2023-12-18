@@ -62,7 +62,6 @@ if (isset($_GET['id'])) {
     <input type="text" name="photo" value="<?php echo $photo1; ?>">
     <input type="text" name="photo" value="<?php echo $photo2; ?>">
     <input type="text" name="photo" value="<?php echo $photo3; ?>">
-    <input type="text" name="photo" value="<?php echo $photo4; ?>">
     <br>
     <input type="hidden" name="id" value="<?php echo $vedute_id; ?>">
     <br>

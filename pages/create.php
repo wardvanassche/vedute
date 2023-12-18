@@ -30,9 +30,6 @@
     <label for="photo3">photo 3:</label>
     <input type="text" name="photo3" id="photo3" required><br><br>
 
-    <label for="photo3">photo 4:</label>
-    <input type="text" name="photo4" id="photo4"><br><br>
-
     <input type="submit" name="create" value="verzenden">
 </form>
 </body>
