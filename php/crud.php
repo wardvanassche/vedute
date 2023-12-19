@@ -15,10 +15,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['create'])) {
     $photo1 = mysqli_real_escape_string($conn, $_POST["photo1"]);
     $photo2 = mysqli_real_escape_string($conn, $_POST["photo2"]);
     $photo3 = mysqli_real_escape_string($conn, $_POST["photo3"]);
-    $photo4 = mysqli_real_escape_string($conn, $_POST["photo4"]);
 
     // roept createvedute aan
-    createVedute($title, $date, $author, $description, $photo1, $photo2, $photo3, $photo4, $conn);
+    createVedute($title, $date, $author, $description, $photo1, $photo2, $photo3, $conn);
 } else {
     echo "Het formulier is niet correct verzonden.";
 }
@@ -44,11 +43,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     exit;
 }
 
-function createVedute($title, $date, $author, $description, $photo1, $photo2, $photo3, $photo4, $conn)
+function createVedute($title, $date, $author, $description, $photo1, $photo2, $photo3, $conn)
 {
 
     // voegt de informatie toe aan de database
-    $sql = "INSERT INTO vedute (title, date, author, description, photo1, photo2, photo3, photo4) VALUES ('$title', '$date', '$author', '$description', '$photo1', '$photo2', '$photo3', '$photo4')";
+    $sql = "INSERT INTO vedute (title, date, author, description, photo1, photo2, photo3) VALUES ('$title', '$date', '$author', '$description', '$photo1', '$photo2', '$photo3')";
 
     // Voer de query uit en controleert op fouten
     $result = mysqli_query($conn, $sql) or die('error ' . mysqli_error($conn) . 'with query' . $sql);

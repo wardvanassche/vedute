@@ -55,6 +55,7 @@ a {
     display: flex;
     justify-content: center;
     padding-top: 15px;
+    align-items: center;
 }
 
 .login a:hover {

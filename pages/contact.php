@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -25,8 +28,16 @@
         </a>
     </div>
     <div class="container login">
-        <a href="login.php">Login<i class="fa-solid fa-circle-user"></i>
-        </a>
+        <div class="container login">
+            <?php if (!isset($_SESSION['loggedInUser'])) { ?>
+                <a href="login.php">
+                    Login
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            <?php } else { ?>
+                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+            <?php } ?>
+        </div>
     </div>
 </header>
 <!doctype html>
