@@ -9,7 +9,6 @@ if (!isset($_SESSION['loggedInUser'])) {
 require_once "../php/settings.php"; // verbinding met database
 
 
-
 $admin = $_SESSION['loggedInUser']['admin'];
 //$doneren = $_SESSION['loggedInUser']['doneer'];
 $id = $_SESSION['loggedInUser']['id'];
@@ -71,7 +70,7 @@ $id = $_SESSION['loggedInUser']['id'];
 
 <div class="container mt-5">
     <h4>Bedrag om te doneren:</h4>
-    <form id="donationForm"  method="post">
+    <form id="donationForm" method="post">
 
         <label for="donationAmount" class="form-label"></label>
         <div class="input-group mb-3">
@@ -96,7 +95,6 @@ $id = $_SESSION['loggedInUser']['id'];
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -128,36 +126,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
 
                 // Voeg het donatiebedrag toe als een queryparameter aan de URL
-//                header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
+                // header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
 
-// Plaats dit bovenaan je PHP-bestand
+                // Plaats dit bovenaan je PHP-bestand
 
-// Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
-$betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
+                // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
+                $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
 
 // Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
 // Bijvoorbeeld, vervang dit met het bedrag dat je wilt doneren
-?>
+                ?>
 
 
+                <script type="text/javascript">
+                    // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
+                    var betalen = '<?php echo $betalen; ?>';
 
-<script type="text/javascript">
-    // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
-    var betalen = '<?php echo $betalen; ?>';
+                    // Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
+                    var donatieBedrag = <?php echo $donatieBedrag; ?>;
 
-    // Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
-    var donatieBedrag = <?php echo $donatieBedrag; ?>;
+                    // JavaScript om het nieuwe tabblad te openen en vervolgens door te sturen naar de nieuwe URL
+                    window.open(betalen, "_blank");
 
-    // JavaScript om het nieuwe tabblad te openen en vervolgens door te sturen naar de nieuwe URL
-    window.open(betalen, "_blank");
+                    setTimeout(function () {
+                        window.location.href = "process_donation.php?amount=" + encodeURIComponent(donatieBedrag);
+                    }, 5000); // Wacht 1 seconde (1000 milliseconden) voordat door te sturen
+                </script>
+                <?php
 
-    setTimeout(function() {
-        window.location.href = "process_donation.php?amount=" + encodeURIComponent(donatieBedrag);
-    }, 1000); // Wacht 1 seconde (1000 milliseconden) voordat door te sturen
-</script>
-<?php
-
-} else {
+            } else {
                 echo "Fout bij de update: " . $conn->error;
             }
 
@@ -168,10 +165,6 @@ $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
 }
 
 ?>
-
-
-
-
 
 
 </body>

@@ -27,7 +27,8 @@ $email = $_SESSION['loggedInUser']['email'];
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap"
+          rel="stylesheet">
 </head>
 <header>
     <div class="container">
@@ -80,8 +81,17 @@ $email = $_SESSION['loggedInUser']['email'];
         </p>
     </div>
 </section>
+
+<div class="d-flex justify-content-center align-items-center">
+    <section class="stories-button">
+        <div class="container-sm bg-light mt-5 p-3 text-center">
+            <a href="stories.php" class="btn btn-primary btn-lg">Verdiep je in je eerste Vedute verhaal...</a>
+        </div>
+    </section>
+</div>
+
 <section class="news">
-    <div class="container-sm bg-light mt-5 p-3 text-center">
+    <div class="container-sm bg-light mt-5 p-3 text-center mb-5">
         <h2>Laatste nieuws</h2>
         <p>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, asperiores aspernatur blanditiis cumque
@@ -90,6 +100,9 @@ $email = $_SESSION['loggedInUser']['email'];
         </p>
     </div>
 </section>
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>

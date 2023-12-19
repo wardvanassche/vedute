@@ -114,3 +114,11 @@ button{
     border-radius: 20px;
     cursor: pointer;
 }
+
+.stories-button{
+    width: 300px;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+

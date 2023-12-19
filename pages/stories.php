@@ -109,6 +109,12 @@
                 </div>
     </section>
 
+    <div class="d-flex justify-content-center align-items-center">
+        <section class="stories-button">
+            <a href="donate.php" class="btn btn-primary btn-lg">Koop je eigen storybook!!!</a>
+        </section>
+    </div>
+
     <div class="arrowcontainer">
         <div class="arrow up" onclick="scrollToSection('artist1')"></div>
     </div>

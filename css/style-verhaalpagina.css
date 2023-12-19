@@ -182,3 +182,22 @@ section {
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.stories-button{
+    width: 300px;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 10px;
+    height: 100px;
+    display: flex; /* Added to enable flexbox */
+
+}
+
+.btn{
+    height: 70px;
+    width: 260px;
+    display: flex; /* Enable flexbox for the button */
+    align-items: center; /* Center vertically within the button */
+    justify-content: center; /* Center horizontally within the button */
+}
+
