@@ -14,12 +14,12 @@ $admin = $_SESSION['loggedInUser']['admin'];
 //$doneren = $_SESSION['loggedInUser']['doneer'];
 $id = $_SESSION['loggedInUser']['id'];
 ?>
-
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Doneren</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -85,7 +85,7 @@ $id = $_SESSION['loggedInUser']['id'];
             <input type="number" id="donationAmount" name="donationAmount" class="form-control" required>
         </div>
         <input type="hidden" id="donationSubmitted" name="donationSubmitted" value="1">
-        <button type="submit" name="toggleButton" >Doneren</button>
+        <button type="submit" name="toggleButton" class="btn btn-primary">Doneren</button>
     </form>
 </div>
 
@@ -158,5 +158,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
+
+
+
+
+
+
 </body>
 </html>

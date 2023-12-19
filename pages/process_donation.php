@@ -29,9 +29,9 @@ if (isset($_GET['amount'])) {
         <h1>
             <p>Dank voor uw donatie van € <?= $donatieBedrag ?></p>
             <br>
-            <p>download nu het e-book</p>
+            <p>download nu het storybook</p>
 
-            <button class="download_button" id="downloadButton">Download e-book</button>
+            <button class="download_button" id="downloadButton">Download storybook</button>
 
             <script>
                 document.getElementById('downloadButton').addEventListener('click', function() {
