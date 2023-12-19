@@ -103,18 +103,6 @@ $id = $_SESSION['loggedInUser']['id'];
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
 
-<!---->
-<!--<script>-->
-<!--    document.addEventListener('DOMContentLoaded', function () {-->
-<!--        document.getElementById('donationForm').addEventListener('submit', function () {-->
-<!--            // Vul het onzichtbare veld in voordat het formulier wordt ingediend-->
-<!--            console.log('Submitting form with donationSubmitted = 1');-->
-<!--            document.getElementById('donationSubmitted').value = '1';-->
-<!--            return true; // Zorg ervoor dat het formulier na het instellen van de waarde doorgaat met indienen-->
-<!--        });-->
-<!--    });-->
-<!---->
-<!--</script>-->
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -146,8 +134,36 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
 
                 // Voeg het donatiebedrag toe als een queryparameter aan de URL
-                header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
-            } else {
+//                header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
+
+// Plaats dit bovenaan je PHP-bestand
+
+// Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
+$betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
+
+// Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
+// Bijvoorbeeld, vervang dit met het bedrag dat je wilt doneren
+?>
+
+
+
+<script type="text/javascript">
+    // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
+    var betalen = '<?php echo $betalen; ?>';
+
+    // Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
+    var donatieBedrag = <?php echo $donatieBedrag; ?>;
+
+    // JavaScript om het nieuwe tabblad te openen en vervolgens door te sturen naar de nieuwe URL
+    window.open(betalen, "_blank");
+
+    setTimeout(function() {
+        window.location.href = "process_donation.php?amount=" + encodeURIComponent(donatieBedrag);
+    }, 1000); // Wacht 1 seconde (1000 milliseconden) voordat door te sturen
+</script>
+<?php
+
+} else {
                 echo "Fout bij de update: " . $conn->error;
             }
 
