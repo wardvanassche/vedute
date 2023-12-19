@@ -19,8 +19,9 @@ if (isset($_GET['amount'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
     <title>Verwerking Donatie</title>
-    <link rel="stylesheet" href="../css/Stylesheet.css"/>
+    <link rel="stylesheet" href="../css/style-loginsysteem.css"/>
 </head>
 <body>
 <div class="container">
