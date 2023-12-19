@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -12,7 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
           integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap"
+          rel="stylesheet">
 
 </head>
 <body>
@@ -26,10 +30,14 @@
         </a>
     </div>
     <div class="container login">
-        <a href="login.php">
-            Login
-            <i class="fa-solid fa-circle-user"></i>
-        </a>
+        <?php if (!isset($_SESSION['loggedInUser'])) { ?>
+            <a href="login.php">
+                Login
+                <i class="fa-solid fa-circle-user"></i>
+            </a>
+        <?php } else { ?>
+            <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+        <?php } ?>
     </div>
 </header>
 <nav class="navbar navbar-expand-lg bg-light py-1">
@@ -91,7 +99,7 @@
                                         aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div id="carouselExampleIndicators' . $row['id'] . '" class="carousel slide" data-bs-ride="carousel">
+                                <div id="carouselExampleIndicators' . $row['id'] . '" class="carousel slide">
                                     <div class="carousel-indicators">
                                         <button type="button" data-bs-target="#carouselExampleIndicators' . $row['id'] . '" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                                         <button type="button" data-bs-target="#carouselExampleIndicators' . $row['id'] . '" data-bs-slide-to="1" aria-label="Slide 2"></button>

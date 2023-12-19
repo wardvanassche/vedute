@@ -35,7 +35,7 @@ if ($result->num_rows > 0) {
         echo "<br>";
 
         // Toont de afbeelding
-        echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
+        echo '<img src="' . $row["photo1"] . '" alt="Afbeelding">';
         echo "<br>";
         echo '<a class="btn btn-info" href="editvedute.php?id=' . $row["id"] . '">Wijzig</a>';
         echo "<br>";

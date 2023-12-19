@@ -47,7 +47,7 @@ function createVedute($title, $date, $author, $description, $photo1, $photo2, $p
 {
 
     // voegt de informatie toe aan de database
-    $sql = "INSERT INTO vedute (title, date, author, description, photo1, photo2, photo3) VALUES ('$title', '$date', '$author', '$description', '$photo1', '$photo2', '$photo3', '$photo4')";
+    $sql = "INSERT INTO vedute (title, date, author, description, photo1, photo2, photo3) VALUES ('$title', '$date', '$author', '$description', '$photo1', '$photo2', '$photo3')";
 
     // Voer de query uit en controleert op fouten
     $result = mysqli_query($conn, $sql) or die('error ' . mysqli_error($conn) . 'with query' . $sql);

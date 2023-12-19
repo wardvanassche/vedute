@@ -1,15 +1,5 @@
 <?php
 session_start();
-
-// Check if the user is logged in
-if (!isset($_SESSION['loggedInUser'])) {
-    header("Location: login.php"); // Redirect to the login page if not logged in
-    exit;
-}
-
-$email = $_SESSION['loggedInUser']['email'];
-
-// HTML for the homepage
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,10 +29,16 @@ $email = $_SESSION['loggedInUser']['email'];
         </a>
     </div>
     <div class="container login">
-        <a href="login.php">
-            Login
-            <i class="fa-solid fa-circle-user"></i>
-        </a>
+        <div class="container login">
+            <?php if (!isset($_SESSION['loggedInUser'])) { ?>
+                <a href="login.php">
+                    Login
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            <?php } else { ?>
+                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+            <?php } ?>
+        </div>
     </div>
 </header>
 <nav class="navbar navbar-expand-lg bg-light py-1">
