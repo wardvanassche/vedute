@@ -91,9 +91,8 @@ $id = $_SESSION['loggedInUser']['id'];
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('donationForm').addEventListener('submit', function () {
-            // Vul het onzichtbare veld in voordat het formulier wordt ingediend
             document.getElementById('donationSubmitted').value = '1';
-            return true; // Zorg ervoor dat het formulier na het instellen van de waarde doorgaat met indienen
+            return true;
         });
     });
 </script>
@@ -108,20 +107,18 @@ $id = $_SESSION['loggedInUser']['id'];
         crossorigin="anonymous"></script>
 <?php
 
-// Start de sessie als deze nog niet actief is
+
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Controleer of de knop is ingedrukt
-    if (isset($_POST['toggleButton'])) {
-        // Controleer of het onzichtbare veld is ingevuld door de JavaScript
-        if (isset($_POST['donationSubmitted']) && $_POST['donationSubmitted'] == '1') {
-            // Haal de waarde van donationAmount op
-            $donatieBedrag = $_POST['donationAmount'];
 
-            // Voer hier je PHP-code uit, gebruik $donatieBedrag waar nodig
+    if (isset($_POST['toggleButton'])) {
+
+        if (isset($_POST['donationSubmitted']) && $_POST['donationSubmitted'] == '1') {
+
+            $donatieBedrag = $_POST['donationAmount'];
             $nieuweStatus = true;
             $sqlUpdate = "UPDATE users SET doneer = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
 
@@ -130,33 +127,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
 
                 $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
-
-                // Voeg het donatiebedrag toe als een queryparameter aan de URL
-                // header('Location: process_donation.php?amount=' . urlencode($donatieBedrag));
-
-                // Plaats dit bovenaan je PHP-bestand
-
-                // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
                 $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
-
-// Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
-// Bijvoorbeeld, vervang dit met het bedrag dat je wilt doneren
                 ?>
 
-
                 <script type="text/javascript">
-                    // Vervang 'https://tikkie.me/pay/j8cht3laal9k3h5gerla' door de gewenste URL
-                    var betalen = '<?php echo $betalen; ?>';
 
-                    // Vervang $donatieBedrag met het daadwerkelijke donatiebedrag
+                    var betalen = '<?php echo $betalen; ?>';
                     var donatieBedrag = <?php echo $donatieBedrag; ?>;
 
-                    // JavaScript om het nieuwe tabblad te openen en vervolgens door te sturen naar de nieuwe URL
                     window.open(betalen, "_blank");
 
                     setTimeout(function () {
                         window.location.href = "process_donation.php?amount=" + encodeURIComponent(donatieBedrag);
-                    }, 5000); // Wacht 1 seconde (1000 milliseconden) voordat door te sturen
+                    }, 1500);
                 </script>
                 <?php
 
@@ -166,7 +149,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         }
     }
-    // Sluit de databaseverbinding
     $conn->close();
 }
 
