@@ -120,7 +120,7 @@ session_start();
 
     <div class="d-flex justify-content-center align-items-center">
         <section class="stories-button">
-            <a href="donate.php" class="btn btn-primary btn-lg">Koop je eigen storybook!!!</a>
+            <a href="storybook.php" class="btn btn-primary btn-lg">Koop je eigen storybook!!!</a>
         </section>
     </div>
 
