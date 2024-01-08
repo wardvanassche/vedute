@@ -11,6 +11,8 @@
         <title>Overzicht veduten</title>
     </head>
     <body>
+        <a href="create.php">Maak vedute aan</a>
+        <br>
         <?php
             // Start session
             session_start();

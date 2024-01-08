@@ -36,20 +36,28 @@
     </head>
     <body>
         <h2>Creëer nieuws artikel</h2>
-        <form action="" method="POST">
-            Titel:<br>
-            <input type="text" name="news_title">
-            <br>
-            Auteur:<br>
-            <input type="text" name="news_author">
-            <br>
-            <input type="hidden" name="news_create_date" value="<?php echo date("Y.m.d"); ?>">
-            Bericht:<br>
-            <!-- <input type="" name="news_content"> -->
-            <textarea name="news_content" rows="5" cols="21"></textarea>
-            <br>
-            <br>
-            <input type="submit" name="submit" value="submit">
-        </form>
+        <div class="registration-form">
+            <form action="" method="post">
+                <h2>Artikel aanmaken</h2>
+                <div class="form-group">
+                    Titel
+                    <input type="text" class="form-control item" id="news_title" placeholder="Titel" name="news_title" required>
+                </div>
+                <div class="form-group">
+                    Auteur
+                    <input type="text" class="form-control item" id="news_author" placeholder="Auteur" name="news_author" required>
+                </div>
+                <div class="form-group">
+                    <input type="hidden" name="news_create_date" value="<?php echo date("Y.m.d"); ?>">
+                </div>
+                <div class="form-group">
+                    Bericht
+                    <textarea placeholder="Typ hier je bericht" class="form-control item" name="news_content" rows="5" cols="21" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit" name="submit" value="submit" class="btn btn-block create-account">Aanmaken</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
