@@ -27,15 +27,14 @@ $admin = $_SESSION['loggedInUser']['admin'];
 
 <body>
 <!--This is only accessible page when you're logged in-->
-<h2>Secure page</h2>
+<h2>veiligheidspagina</h2>
 
 
 <ul>
     <h1>
-        <p>You are logged in! Welcome, <?= $email ?></p>
+        <p>Je bent ingelogd! Welkom <?= $email ?></p>
         <p>
             <?php if ($admin == true) { ?>
-                Hello
                 <a href="adminOverview.php">admin overzicht</a>
             <?php }else{ ?>
             doei
@@ -43,7 +42,7 @@ $admin = $_SESSION['loggedInUser']['admin'];
         </p>
 <!--        --><?php //var_dump($_SESSION['loggedInUser']); ?>
 
-        <button> <a href="logoutpage.php">logout</a></button>
+        <button> <a href="logoutpage.php">uitloggen</a></button>
 
         <br>
         <button><a href="index.php">Homepage</a></button>

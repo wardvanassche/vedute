@@ -140,6 +140,7 @@ section {
 .login a {
     text-decoration: none;
     color: white;
+    font-family: 'Oswald', sans-serif;
     display: flex;
     justify-content: center;
     padding-top: 15px;
@@ -199,4 +200,5 @@ section {
     align-items: center; /* Center vertically within the button */
     justify-content: center; /* Center horizontally within the button */
 }
+
 

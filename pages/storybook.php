@@ -48,7 +48,7 @@ $id = $_SESSION['loggedInUser']['id'];
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
             <?php } else { ?>
-                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+                <a href="logoutpage.php">Uitloggen<i class="fa-solid fa-circle-user"></i></a>
             <?php } ?>
         </div>
     </div>
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($conn->query($sqlUpdate)) {
                 $conn->commit();  // Bevestig de transactie
 
-                $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
+                $betalen = 'https://tikkie.me/pay/indj4r4mnv7pd3g6l1k3';
                 ?>
 
                 <script type="text/javascript">

@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+
 
 <body>
 <header>
@@ -28,7 +30,7 @@
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
             <?php } else { ?>
-                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+                <a href="logoutpage.php">Uitloggen<i class="fa-solid fa-circle-user"></i></a>
             <?php } ?>
         </div>
     </div>
@@ -57,9 +59,13 @@
         </ul>
     </div>
 </nav>
-<h2>Bedankt voor het kopen van het Storybook</h2>
-<button class="download_button" id="downloadButton">Download Storybook</button>
-<a href="storybook.php">terug</a>
+
+
+<div class="center-content">
+    <h4>Bedankt voor het kopen van het Storybook!</h4>
+    <button class="download_button" id="downloadButton">Download Storybook</button>
+    <a href="storybook.php"><button>terug</button></a>
+</div>
 
 <script>
     document.getElementById('downloadButton').addEventListener('click', function() {
@@ -70,12 +76,12 @@
     function downloadPDF() {
         // Plaats hier de code om het PDF-bestand te downloaden
         // Bijvoorbeeld, als de PDF een directe link heeft:
-        var pdfUrl = 'e-book/test.pdf';
+        var pdfUrl = 'e-book/storybook2024.pdf';
 
         // Maak een onzichtbare link aan en simuleer een klik om het bestand te downloaden
         var link = document.createElement('a');
         link.href = pdfUrl;
-        link.download = 'test.pdf';
+        link.download = 'storybook2024.pdf';
         link.click();
     }
 </script>

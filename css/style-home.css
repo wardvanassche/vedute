@@ -2,6 +2,11 @@ body {
     background-color: #0C475B;
 }
 
+.center-content {
+    padding-top: 50px;
+    text-align: center;
+}
+
 header {
     text-align: center;
     color: white;
@@ -19,6 +24,11 @@ h2{
     font-family: 'Oswald', sans-serif;
 }
 
+h4{
+    color: white;
+    font-family: 'Oswald', sans-serif;
+}
+
 p{
     font-family: 'Afacad', sans-serif;
     font-weight: 400;
@@ -27,13 +37,6 @@ p{
 
 div{
     border-radius: 10px;
-
-}
-
-
-h4{
-    color: white;
-    font-family: 'Oswald', sans-serif;
 
 }
 

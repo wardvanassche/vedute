@@ -51,7 +51,7 @@ if ($admin === false){
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
             <?php } else { ?>
-                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+                <a href="logoutpage.php">Uitloggen<i class="fa-solid fa-circle-user"></i></a>
             <?php } ?>
         </div>
     </div>

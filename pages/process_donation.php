@@ -19,6 +19,7 @@ if (isset($_GET['amount'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style-home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
 
 <body>
 <header>
@@ -67,13 +68,9 @@ if (isset($_GET['amount'])) {
         </ul>
     </div>
 </nav>
-<div class="container">
-    <ul>
-        <h1>
-            <p>Dank voor uw donatie van € <?= $donatieBedrag ?></p>
-            <br>
-        </h1>
-    </ul>
+<div class="center-content">
+    <h4>Bedankt voor je donatie</h4>
+    <a href="storybook.php"><button>terug</button></a>
 </div>
 <?= exit;?>
 </body>

@@ -20,11 +20,17 @@ $id = $_SESSION['loggedInUser']['id'];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Doneren</title>
+    <title>Storybook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
 
+
+</head>
 <body>
 <header>
     <div class="container">
@@ -43,7 +49,7 @@ $id = $_SESSION['loggedInUser']['id'];
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
             <?php } else { ?>
-                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+                <a href="logoutpage.php">Uitloggen<i class="fa-solid fa-circle-user"></i></a>
             <?php } ?>
         </div>
     </div>
@@ -127,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 echo "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
 
                 $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
-                $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
+                $betalen = 'https://tikkie.me/pay/indj4r4mnv7pd3g6l1k3';
                 ?>
 
                 <script type="text/javascript">

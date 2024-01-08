@@ -94,8 +94,8 @@ if (isset($_POST['submit'])) {
 <section>
 
     <?php if ($login) { ?>
-        <p>You are logged in!</p>
-        <p>        <button> <a href="logoutpage.php">logout</a></button> / <button> <a href="secure.php">To secure page</a></button>
+        <p>Je bent ingelogd!</p>
+        <p>        <button> <a href="logoutpage.php">uitloggen</a></button> / <button> <a href="secure.php">Naar veiligheids pagina</a></button>
         </p>
 
     <?php } else { ?>
@@ -122,7 +122,7 @@ if (isset($_POST['submit'])) {
 
     <ul>
         <h1>
-            <a href="register.php">Don't have an account yet?</a>
+            <a href="register.php">Heb je nog geen account?</a>
             <h1>
                 <br>
                 <button> <a href="news.php">Ga naar Nieuws</a></button>

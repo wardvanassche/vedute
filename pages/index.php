@@ -37,7 +37,7 @@ session_start();
                     <i class="fa-solid fa-circle-user"></i>
                 </a>
             <?php } else { ?>
-                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+                <a href="logoutpage.php">Uitloggen<i class="fa-solid fa-circle-user"></i></a>
             <?php } ?>
         </div>
     </div>
@@ -90,9 +90,9 @@ session_start();
     <div class="container-sm bg-light mt-5 p-3 text-center mb-5">
         <h2>Laatste nieuws</h2>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, asperiores aspernatur blanditiis cumque
-            distinctio eaque ex exercitationem fugit minima officiis omnis rerum sapiente sed similique tempora, ut
-            voluptates. Maiores, unde?
+            In samenwerking met BPD presenteert Stichting Vedute in het Burgerweeshuis de tentoonstelling ‘44 x 32 x 7 –
+            Vedute editie 2023’. In de tentoonstelling worden de zes nieuwe ruimtelijke manuscripten getoond, die in opdracht
+            van Vedute in 2023 zijn gemaakt.
         </p>
     </div>
 </section>
