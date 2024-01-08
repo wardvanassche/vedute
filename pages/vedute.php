@@ -55,6 +55,8 @@
                     echo '<a class="btn btn-info" href="editvedute.php?id=' . $row["id"] . '">Wijzig</a>';
                     echo "<br>";
                     echo '<a class="btn btn-info" href="deletevedute.php?id=' . $row["id"] . '">Verwijder</a>';
+                    echo "<br>";
+                    echo "<br>";
                 }
             } else {
                 echo "Er zijn nog geen vedutes aangemaakt";
