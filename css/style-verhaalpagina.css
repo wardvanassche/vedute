@@ -15,7 +15,6 @@ header {
     display: flex;
 }
 
-
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 3em;
@@ -31,7 +30,6 @@ header h1 {
     text-shadow: 1px 1px 9px black;
     -webkit-text-stroke: 2px black;
 }
-
 
 header a {
     text-decoration: none;
@@ -103,7 +101,6 @@ section {
     max-width: 100%;
 }
 
-
 .artist-info {
     display: flex;
     flex-direction: row; /* Display children (p and img) side by side */
@@ -129,7 +126,6 @@ section {
     margin-left: 20px; /* Add space between text and image */
     order: 2; /* Set the order to 2 to move the img to the right */
 }
-
 
 .login {
     display: flex;
@@ -190,7 +186,6 @@ section {
     border-radius: 10px;
     height: 100px;
     display: flex; /* Added to enable flexbox */
-
 }
 
 .btn{

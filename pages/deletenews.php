@@ -11,7 +11,6 @@
     include "../php/database.php";
 
     if (isset($_GET['id'])) {
-
         $news_id = $_GET['id'];
 
         $sql = "DELETE FROM `news` WHERE `id`='$news_id'";
@@ -24,6 +23,5 @@
         }else{
             echo "Error:" . $sql . "<br>" . $conn->error;
         }
-
     } 
 ?>
