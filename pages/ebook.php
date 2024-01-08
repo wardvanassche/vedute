@@ -57,7 +57,7 @@ session_start();
                 <a class="nav-link" href="stories.php">VERHALEN</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black border-bottom border-black" href="ebook.php">EBOOK</a>
+                <a class="nav-link text-black border-bottom border-black" href="ebook.php">STORYBOOK</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="donate.php">DONEREN</a>
