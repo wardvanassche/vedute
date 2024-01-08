@@ -20,15 +20,20 @@ $id = $_SESSION['loggedInUser']['id'];
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Doneren</title>
+    <title>Storybook</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style-home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+          integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
 
+
+</head>
 <body>
 <header>
     <div class="container">
-
     </div>
     <div class="container">
         <a href="index.php">
@@ -64,34 +69,33 @@ $id = $_SESSION['loggedInUser']['id'];
                 <a class="nav-link" href="stories.php">VERHALEN</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="storybook.php">STORYBOOK</a>
+                <a class="nav-link text-black border-bottom border-black" href="storybook.php">STORYBOOK</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-black border-bottom border-black" href="donate.php">DONEREN</a>
+                <a class="nav-link" href="donate.php">DONEREN</a>
             </li>
         </ul>
     </div>
 </nav>
 
-
 <div class="container mt-5">
-    <h4>Bedrag om te doneren:</h4>
-    <form id="donationForm" method="post">
+    <h4>Koop Storybook:</h4>
+    <form id="koopForm" method="post">
 
-        <label for="donationAmount" class="form-label"></label>
+        <label for="bought" class="form-label"></label>
         <div class="input-group mb-3">
             <span class="input-group-text">€</span>
-            <input type="number" id="donationAmount" name="donationAmount" class="form-control" required>
+            <input type="number" placeholder="€10" id="bought" name="bought" class="form-control" readonly>
         </div>
-        <input type="hidden" id="donationSubmitted" name="donationSubmitted" value="1">
-        <button type="submit" name="toggleButton" class="btn btn-primary">Doneren</button>
+        <input type="hidden" id="boughtsubmitted" name="boughtsubmitted" value="1">
+        <button type="submit" name="toggleButton" class="btn btn-primary">betalen</button>
     </form>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('donationForm').addEventListener('submit', function () {
-            document.getElementById('donationSubmitted').value = '1';
+        document.getElementById('koopForm').addEventListener('submit', function () {
+            document.getElementById('boughtsubmitted').value = '1';
             return true;
         });
     });
@@ -116,29 +120,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if (isset($_POST['toggleButton'])) {
 
-        if (isset($_POST['donationSubmitted']) && $_POST['donationSubmitted'] == '1') {
+        if (isset($_POST['boughtsubmitted']) && $_POST['boughtsubmitted'] == '1') {
 
-            $donatieBedrag = $_POST['donationAmount'];
             $nieuweStatus = true;
-            $sqlUpdate = "UPDATE users SET doneer = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
+            $sqlUpdate = "UPDATE users SET kopen = " . ($nieuweStatus ? 1 : 0) . " WHERE id = $id";
 
             if ($conn->query($sqlUpdate)) {
                 $conn->commit();  // Bevestig de transactie
-                echo "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
 
-                $_SESSION['donation_result'] = "Update succesvol uitgevoerd. Bedrag: €" . htmlspecialchars($donatieBedrag);
                 $betalen = 'https://tikkie.me/pay/j8cht3laal9k3h5gerla';
                 ?>
 
                 <script type="text/javascript">
 
                     var betalen = '<?php echo $betalen; ?>';
-                    var donatieBedrag = <?php echo $donatieBedrag; ?>;
 
                     window.open(betalen, "_blank");
 
                     setTimeout(function () {
-                        window.location.href = "process_donation.php?amount=" + encodeURIComponent(donatieBedrag);
+                        window.location.href = "bought_storybook.php";
                     }, 1500);
                 </script>
                 <?php
@@ -153,7 +153,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 ?>
-
 
 </body>
 </html>

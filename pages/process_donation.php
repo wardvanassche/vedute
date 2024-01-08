@@ -1,57 +1,77 @@
 <?php
-// Controleer of het bedrag in de queryparameters aanwezig is
-if (isset($_GET['amount'])) {
-    // Haal de waarde op en desinfecteer deze indien nodig
-    $donatieBedrag = filter_var($_GET['amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 
-    // Gebruik $donatieBedrag zoals nodig in de rest van je code
-//    echo "Ontvangen donatiebedrag: €" . htmlspecialchars($donatieBedrag);
+if (isset($_GET['amount'])) {
+    $donatieBedrag = filter_var($_GET['amount'], FILTER_SANITIZE_NUMBER_FLOAT, FILTER_FLAG_ALLOW_FRACTION);
 } else {
-    // Handel het geval af waarin het bedrag niet aanwezig is
     echo "Fout: Geen donatiebedrag ontvangen.";
 }
 
-
 //?>
 
-<!DOCTYPE html>
-<html lang="nl">
+<!doctype html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Afacad&family=Oswald:wght@200;500&display=swap" rel="stylesheet">
-    <title>Verwerking Donatie</title>
-    <link rel="stylesheet" href="../css/style-loginsysteem.css"/>
-</head>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Doneren</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style-home.css">
+
 <body>
+<header>
+    <div class="container">
+
+    </div>
+    <div class="container">
+        <a href="index.php">
+            <h1>VEDUTE</h1>
+        </a>
+    </div>
+    <div class="container login">
+        <div class="container login">
+            <?php if (!isset($_SESSION['loggedInUser'])) { ?>
+                <a href="login.php">
+                    Login
+                    <i class="fa-solid fa-circle-user"></i>
+                </a>
+            <?php } else { ?>
+                <a href="logoutpage.php">Logout<i class="fa-solid fa-circle-user"></i></a>
+            <?php } ?>
+        </div>
+    </div>
+</header>
+<nav class="navbar navbar-expand-lg bg-light py-1">
+    <div class="navbar">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="index.php">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="contact.php">CONTACT</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gallery.php">GALERIJ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="stories.php">VERHALEN</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="storybook.php">STORYBOOK</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-black border-bottom border-black"  href="donate.php">DONEREN</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 <div class="container">
     <ul>
         <h1>
             <p>Dank voor uw donatie van € <?= $donatieBedrag ?></p>
             <br>
-            <p>download nu het storybook</p>
-
-            <button class="download_button" id="downloadButton">Download storybook</button>
-
-            <script>
-                document.getElementById('downloadButton').addEventListener('click', function() {
-                    // Hier plaats je de logica om het PDF-bestand te downloaden
-                    downloadPDF();
-                });
-
-                function downloadPDF() {
-                    // Plaats hier de code om het PDF-bestand te downloaden
-                    // Bijvoorbeeld, als de PDF een directe link heeft:
-                    var pdfUrl = 'e-book/test.pdf';
-
-                    // Maak een onzichtbare link aan en simuleer een klik om het bestand te downloaden
-                    var link = document.createElement('a');
-                    link.href = pdfUrl;
-                    link.download = 'test.pdf';
-                    link.click();
-                }
-            </script>
-            <button><a href="index.php">Terug naar homepagina</a></button>
         </h1>
     </ul>
 </div>

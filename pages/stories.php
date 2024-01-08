@@ -56,7 +56,7 @@ session_start();
                 <a class="nav-link text-black border-bottom border-black" href="stories.php">VERHALEN</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="ebook.php">STORYBOOK</a>
+                <a class="nav-link" href="storybook.php">STORYBOOK</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="donate.php">DONEREN</a>
@@ -120,7 +120,7 @@ session_start();
 
     <div class="d-flex justify-content-center align-items-center">
         <section class="stories-button">
-            <a href="donate.php" class="btn btn-primary btn-lg">Koop je eigen storybook!!!</a>
+            <a href="storybook.php" class="btn btn-primary btn-lg">Koop je eigen storybook!!!</a>
         </section>
     </div>
 
