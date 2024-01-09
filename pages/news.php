@@ -66,12 +66,12 @@
                                 echo '<td>' . $row["news_author"] . '</td>';
                                 echo '<td>' . $row["news_content"] . '</td>';
                                 if ($row["news_visible"] == 1) {
-                                    echo '<td> Zichtbaar </td>';
+                                    echo '<td> Ja </td>';
                                 } else {
-                                    echo '<td> Niet zichtbaar </td>';
+                                    echo '<td> Nee </td>';
                                 }
-                                echo '<td><a class="btn btn-warning" href="editNews.php?id=' . $row["id"] . '">Wijzig</a></td>';
-                                echo '<td><a class="btn btn-danger" href="deleteNews.php?id=' . $row["id"] . '">Verwijder</a></td>';
+                                echo '<td><a class="btn btn-warning" href="editnews.php?id=' . $row["id"] . '">Wijzig</a></td>';
+                                echo '<td><a class="btn btn-danger" href="deletenews.php?id=' . $row["id"] . '">Verwijder</a></td>';
                             }
                         echo "</tbody>";
                     echo "</table>";
