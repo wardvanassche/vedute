@@ -100,7 +100,6 @@
                     echo "<table class='table table-striped'>";
                     echo "<thead>";
                         echo "<tr>";
-                        echo "<th scope='col'>#ID</th>";
                         echo "<th scope='col'>Email</th>";
                         echo "<th scope='col'>Heeft gedoneerd</th>";
                         echo "</tr>";
@@ -110,7 +109,6 @@
                             $doneer = $row["doneer"];
                             // Loop through results, get each row
                             echo "<tr>";
-                            echo '<th scope="row">' . $row["id"] . '</th>';
                             echo '<td>' . $row["email"] . '</td>';
                             echo "<td> " . ($doneer == 1 ? "Ja" : "Nee") . "</td>";
                         }

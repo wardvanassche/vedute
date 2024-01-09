@@ -40,7 +40,6 @@
                     echo "<table class='table table-striped'>";
                         echo "<thead>";
                             echo "<tr>";
-                                echo "<th scope='col'>#</th>";
                                 echo "<th scope='col'>Titel</th>";
                                 echo "<th scope='col'>Datum</th>";
                                 echo "<th scope='col'>Auteur</th>";
@@ -53,7 +52,6 @@
                             while ($row = $result->fetch_assoc()) {
                                 // Loop through results, get each row
                                 echo "<tr>";
-                                echo '<th scope="row">' . $row["id"] . '</th>';
                                 echo '<td>' . $row["title"] . '</td>';
                                 echo '<td>' . $row["date"] . '</td>';
                                 echo '<td>' . $row["author"] . '</td>';

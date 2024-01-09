@@ -86,6 +86,25 @@
         <section class="news">
             <div class="container-sm bg-light mt-5 p-3 text-center mb-5">
                 <h2>Laatste nieuws</h2>
+                <?php
+                    // DB
+                    require_once "../php/database.php"; 
+
+                    // Get all data from table
+                    $sql = "SELECT * FROM news WHERE news_visible = 1";
+
+                    // Run query, save results in $result
+                    $result = $conn->query($sql);
+
+                    // Check if there is data
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<p>' . $row["news_content"] . '</p>';
+                        } 
+                    }
+                        // Close connection
+                        $conn->close();
+                ?>
                 <p>
                     In samenwerking met BPD presenteert Stichting Vedute in het Burgerweeshuis de tentoonstelling ‘44 x 32 x 7 –
                     Vedute editie 2023’. In de tentoonstelling worden de zes nieuwe ruimtelijke manuscripten getoond, die in opdracht

@@ -5,11 +5,9 @@
         //I use require_once to only make connection with the database when I use the submit button.
         require_once "../php/database.php";
 
-
         //These are for the SQL Injections//
         $email = mysqli_escape_string($conn, $_POST['email']);
         $password = $_POST['password'];
-
 
         //if you didn't fill in your email or password you'll see errors.
         $errors = [];

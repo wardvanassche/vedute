@@ -1,3 +1,13 @@
+<?php
+    // Start session
+    session_start();
+
+    // Check if logged in
+    if (!isset($_SESSION['loggedInUser'])) {
+        header("Location: login.php");
+        exit;
+    }
+?>
 <!doctype html>
 <html lang="en">
     <head>

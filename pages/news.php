@@ -44,7 +44,6 @@
                     echo "<table class='table table-striped'>";
                         echo "<thead>";
                             echo "<tr>";
-                            echo "<th scope='col'>#ID</th>";
                             echo "<th scope='col'>Titel</th>";
                             echo "<th scope='col'>Aanmaak datum</th>";
                             echo "<th scope='col'>Wijzig datum</th>";
@@ -59,7 +58,6 @@
                             while ($row = $result->fetch_assoc()) {
                                 // Loop through results, get each row
                                 echo "<tr>";
-                                echo '<th scope="row">' . $row["id"] . '</th>';
                                 echo '<td>' . $row["news_title"] . '</td>';
                                 echo '<td>' . $row["news_create_date"] . '</td>';
                                 echo '<td>' . $row["news_edit_date"] . '</td>';
