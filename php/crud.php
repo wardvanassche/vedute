@@ -33,10 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['delete'])) {
     $sql = "DELETE FROM vedute  WHERE id= $id";
 
     $result = mysqli_query($conn, $sql) or die('Error: ' . mysqli_error($conn) . ' with query ' . $sql);
-
-
     $conn->close();
-
 
     // Redirect to index.php
     header('Location: test.php');
@@ -54,7 +51,7 @@ function createVedute($title, $date, $author, $description, $photo1, $photo2, $p
 
     // als de query gelukt is stuurt hij je naar test.php waar alle vedutes getoond worden
     if ($result) {
-        header("location: test.php");
+        header("location: ../pages/vedute.php");
         echo "vedute gemaakt";
     } else {
         // Als er een fout optreedt, toon een foutbericht

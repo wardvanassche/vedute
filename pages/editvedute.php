@@ -1,7 +1,7 @@
 <?php
     include "../php/database.php";
 
-    if (isset($_POST['update'])) {
+    if (isset($_POST['submit'])) {
         $vedute_id = $_POST['id'];
         $title = $_POST["title"];
         $author = $_POST["author"];
@@ -10,7 +10,7 @@
         $photo2 = $_POST['photo2'];
         $photo3 = $_POST['photo3'];
 
-        $sql = "UPDATE `vedute` SET `title`='$title',`description`='$description',`photo1`='$photo1',`photo2`='$photo2',`photo3`='$photo3', WHERE `id`='$vedute_id'";
+        $sql = "UPDATE `vedute` SET `title`='$title',`description`='$description',`photo1`='$photo1',`photo2`='$photo2',`photo3`='$photo3' WHERE `id`='$vedute_id'";
         $result = $conn->query($sql);
 
         if ($result == TRUE) {
@@ -53,13 +53,10 @@
         <title>Wijzig vedute - <?php echo $title; ?> </title>
     </head>
     <body>
-
-            <input type="hidden" name="id" value="<?php echo $vedute_id; ?>">
-        </form> 
-
         <div class="registration-form">
             <form action="" method="post">
                 <h2>Vedute wijzigen</h2>
+                <input type="hidden" name="id" value="<?php echo $vedute_id; ?>">
                 <div class="form-group">
                     Titel
                     <input type="text" value="<?php echo $title; ?>" class="form-control item" name="title" id="title" required>
@@ -77,12 +74,16 @@
                     <input type="text" value="<?php echo $description; ?>" class="form-control item" name="description" id="description" required>
                 </div>
                 <div class="form-group">
-                    Foto
-                    <input type="text" value="<?php echo $photo1; ?>" class="form-control item" name="photo" id="photo" required>
+                    Foto 1
+                    <input type="text" value="<?php echo $photo1; ?>" class="form-control item" name="photo1" id="photo1" required>
+                    Foto 2 
+                    <input type="text" value="<?php echo $photo2; ?>" class="form-control item" name="photo2" id="photo2" required>
+                    Foto 3
+                    <input type="text" value="<?php echo $photo3; ?>" class="form-control item" name="photo3" id="photo3" required>
                 </div>
                 <div class="form-group d-flex">
                     <button type="submit" name="submit" value="submit" class="btn btn-block create-account">Wijzigen</button>
-                    <a href="news.php" class="btn-block create-account margin-left">
+                    <a href="vedute.php" class="btn-block create-account margin-left">
                         Terug
                     </a>
                 </div>

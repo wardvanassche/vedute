@@ -10,59 +10,65 @@
             crossorigin="anonymous" referrerpolicy="no-referrer"/>
         <title>Overzicht veduten</title>
     </head>
-    <body>
-        <a href="create.php">Maak vedute aan</a>
-        <br>
-        <?php
-            // Start session
-            session_start();
+    <body> 
+        <div class="d-flex justify-content-evenly mt-3 mb-3">
+            <button> <a href="create.php">Maak vedute aan</a> </button>
+            <button> <a href="adminOverview.php">Admin pagina</a> </button>
+        </div>
+        <div class="col-md-8 offset-md-2">
+            <?php
+                // Start session
+                session_start();
 
-            // I use this code to prevent deeplinks.
-            if (!isset($_SESSION['loggedInUser'])) {
-                header("Location: login.php");
-                exit;
-            }
-
-            // verbinding met database
-            require_once "../php/database.php";
-
-            // haalt alle gegevens uit de database
-            $sql = "SELECT * FROM vedute";
-
-            // Uitvoeren van de query en de resultaten worden in $result opgeslagen
-            $result = $conn->query($sql);
-
-            // Controleer of er gegevens zijn opgehaald
-            if ($result->num_rows > 0) {
-
-                // Loop door de resultaten en haal elke rij op
-                while ($row = $result->fetch_assoc()) {
-                    // Toon de opgehaalde gegevens van elke rij
-                    echo "ID: " . $row["id"];
-                    echo "<br>";
-                    echo "Titel: " . $row["title"];
-                    echo "<br>";
-                    echo "Create date: " . $row["date"];
-                    echo "<br>";
-                    echo "Auteur: " . $row["author"];
-                    echo "<br>";
-                    echo "Beschrijving: " . $row["description"];
-                    echo "<br>";
-
-                    // Toont de afbeeldin--g
-                    echo '<img src="' . $row["photo"] . '" alt="Afbeelding">';
-                    echo "<br>";
-                    echo '<a class="btn btn-info" href="editvedute.php?id=' . $row["id"] . '">Wijzig</a>';
-                    echo "<br>";
-                    echo '<a class="btn btn-info" href="deletevedute.php?id=' . $row["id"] . '">Verwijder</a>';
-                    echo "<br>";
-                    echo "<br>";
+                // I use this code to prevent deeplinks.
+                if (!isset($_SESSION['loggedInUser'])) {
+                    header("Location: login.php");
+                    exit;
                 }
-            } else {
-                echo "Er zijn nog geen vedutes aangemaakt";
-            }
 
-            $conn->close(); // Sluit de databaseverbinding
-        ?>
+                // verbinding met database
+                require_once "../php/database.php";
+
+                // haalt alle gegevens uit de database
+                $sql = "SELECT * FROM vedute";
+
+                // Uitvoeren van de query en de resultaten worden in $result opgeslagen
+                $result = $conn->query($sql);
+
+                // Controleer of er gegevens zijn opgehaald
+                if ($result->num_rows > 0) {
+                    echo "<table class='table table-striped'>";
+                        echo "<thead>";
+                            echo "<tr>";
+                                echo "<th scope='col'>#</th>";
+                                echo "<th scope='col'>Titel</th>";
+                                echo "<th scope='col'>Datum</th>";
+                                echo "<th scope='col'>Auteur</th>";
+                                echo "<th scope='col'>Beschrijving</th>";
+                                echo "<th scope='col'></th>";
+                                echo "<th scope='col'></th>";
+                            echo "</tr>";
+                        echo "</thead>";
+                        echo "<tbody>";
+                            while ($row = $result->fetch_assoc()) {
+                                // Loop through results, get each row
+                                echo "<tr>";
+                                echo '<th scope="row">' . $row["id"] . '</th>';
+                                echo '<td>' . $row["title"] . '</td>';
+                                echo '<td>' . $row["date"] . '</td>';
+                                echo '<td>' . $row["author"] . '</td>';
+                                echo '<td>' . $row["description"] . '</td>';
+                                echo '<td><a class="btn btn-warning" href="editvedute.php?id=' . $row["id"] . '">Wijzig</a></td>';
+                                echo '<td><a class="btn btn-danger" href="deletevedute.php?id=' . $row["id"] . '">Verwijder</a></td>';
+                            }
+                        echo "</tbody>";
+                    echo "</table>";
+                } else {
+                    echo "Er zijn nog geen nieuws veduten!";
+                }
+
+                $conn->close(); // Sluit de databaseverbinding
+            ?>
+        </div>
     </body>
 </html>

@@ -34,8 +34,12 @@
                     <input type="text" placeholder="Beschrijving" class="form-control item" name="description" id="description" required>
                 </div>
                 <div class="form-group">
-                    Foto 
-                    <input type="text" placeholder="Foto URL" class="form-control item" name="photo" id="photo" required>
+                    Foto 1
+                    <input type="text" placeholder="Foto URL" class="form-control item" name="photo1" id="photo1" required>
+                    Foto 2
+                    <input type="text" placeholder="Foto URL" class="form-control item" name="photo2" id="photo2" required>
+                    Foto 3
+                    <input type="text" placeholder="Foto URL" class="form-control item" name="photo3" id="photo3" required>
                 </div>
                 <div class="form-group d-flex">
                     <button type="submit" name="create" value="submit" class="btn btn-block create-account">Aanmaken</button>
