@@ -12,9 +12,11 @@
         <title>Overzicht nieuws</title>
     </head>
     <body>
-        <a href="insertnews.php">Maak artikel aan</a>
+    <div class="d-flex justify-content-evenly mt-3">
+                <button> <a href="insertnews.php">Maak artikel aan</a> </button>
+                <button> <a href="adminOverview.php">Admin pagina</a> </button>
+            </div>
         <br>
-        <a href="adminOverview.php">Admin pagina</a>
         <div class="col-md-8 offset-md-2">
             <?php
                 // Start session

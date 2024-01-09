@@ -112,7 +112,7 @@
                             echo "<tr>";
                             echo '<th scope="row">' . $row["id"] . '</th>';
                             echo '<td>' . $row["email"] . '</td>';
-                            echo "<td> " .($doneer == 1 ? "Ja" : "Nee")."</td>";
+                            echo "<td> " . ($doneer == 1 ? "Ja" : "Nee") . "</td>";
                         }
                     echo "</tbody>";
                     echo "</table>";                    
