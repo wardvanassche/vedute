@@ -69,6 +69,7 @@
                     Bericht
                     <textarea class="form-control item" name="news_content" rows="5" cols="21"><?php echo $content; ?></textarea>
                 </div>
+                <!-- Hier nog zichbaar adden -->
                 <div class="form-group">
                     <button type="submit" name="update" value="submit" class="btn btn-block create-account">Wijzig</button>
                 </div>
