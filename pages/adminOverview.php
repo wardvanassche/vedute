@@ -95,17 +95,27 @@
                     if ($result->num_rows > 0) {
 
                     // Loop door de resultaten en haal elke rij op
-                    while ($row = $result->fetch_assoc()) {
-                    // Toon de opgehaalde gegevens van elke rij
-                        $id = $row["id"];
-                        $email = $row["email"];
-                        $doneer = $row["doneer"];
 
-                        // Toon de opgehaalde gegevens van elke rij in HTML
-                        echo "<p>ID: $id</p>";
-                        echo "<p>Email: $email</p>";
-                        echo "<p>doneer: $doneer</p>";
-                    }
+                    // Toon de opgehaalde gegevens van elke rij in HTML
+                    echo "<table class='table table-striped'>";
+                    echo "<thead>";
+                        echo "<tr>";
+                        echo "<th scope='col'>#ID</th>";
+                        echo "<th scope='col'>Email</th>";
+                        echo "<th scope='col'>Heeft gedoneerd</th>";
+                        echo "</tr>";
+                    echo "</thead>";
+                    echo "<tbody>";
+                        while ($row = $result->fetch_assoc()) {
+                            $doneer = $row["doneer"];
+                            // Loop through results, get each row
+                            echo "<tr>";
+                            echo '<th scope="row">' . $row["id"] . '</th>';
+                            echo '<td>' . $row["email"] . '</td>';
+                            echo "<td> " .($doneer == 1 ? "Ja" : "Nee")."</td>";
+                        }
+                    echo "</tbody>";
+                    echo "</table>";                    
                     } else {
                         echo "Er is geen gebruikers info gevonden";
                     }
@@ -113,9 +123,11 @@
                     $conn->close(); // Sluit de databaseverbinding
                 ?>
             </p>
-            <button> <a href="news.php">Ga naar Nieuws</a></button>
-            <br><br>
-            <button> <a href="vedute.php">Ga naar Vedute </a></button>
+            <div class="d-flex justify-content-evenly">
+                <button> <a href="news.php">Ga naar Nieuws</a></button>
+                <button> <a href="vedute.php">Ga naar Vedute </a></button>
+            </div>
+            
         </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"

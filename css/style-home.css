@@ -2,6 +2,10 @@ body {
     background-color: #0C475B;
 }
 
+.margin-left {
+    margin-left: auto;
+}
+
 .center-content {
     padding-top: 50px;
     text-align: center;

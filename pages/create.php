@@ -37,10 +37,15 @@
                     Foto 
                     <input type="text" placeholder="Foto URL" class="form-control item" name="photo" id="photo" required>
                 </div>
-                <div class="form-group">
+                <div class="form-group d-flex">
                     <button type="submit" name="create" value="submit" class="btn btn-block create-account">Aanmaken</button>
+                    <a href="vedute.php" class="btn-block create-account margin-left">
+                        Terug
+                    </a>
                 </div>
+                
             </form>
+            
         </div>
     </body>
 </html>

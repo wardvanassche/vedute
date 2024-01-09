@@ -53,8 +53,11 @@
                     Bericht
                     <textarea placeholder="Typ hier je bericht" class="form-control item" name="news_content" rows="5" cols="21" required></textarea>
                 </div>
-                <div class="form-group">
+                <div class="form-group d-flex">
                     <button type="submit" name="submit" value="submit" class="btn btn-block create-account">Aanmaken</button>
+                    <a href="news.php" class="btn-block create-account margin-left">
+                        Terug
+                    </a>
                 </div>
             </form>
         </div>
