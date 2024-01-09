@@ -29,6 +29,7 @@
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $title = $row["title"];
+                $date = $row["date"];
                 $author = $row["author"];
                 $description = $row['description'];           
                 $photo1 = $row['photo1'];
